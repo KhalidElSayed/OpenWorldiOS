@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2718C27E15F1EBCE00B4BBCC /* OWPointDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2718C27D15F1EBCE00B4BBCC /* OWPointDetailViewController.m */; };
+		2718C28115F1EDA800B4BBCC /* DataDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2718C28015F1EDA800B4BBCC /* DataDetailView.xib */; };
+		2718C28A15F54F4200B4BBCC /* OWPayloadProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2718C28915F54F4200B4BBCC /* OWPayloadProvider.m */; };
+		2718C28E15F550CA00B4BBCC /* OWPayloadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2718C28D15F550CA00B4BBCC /* OWPayloadView.m */; };
+		2718C29115F5518500B4BBCC /* OWTextPayloadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2718C29015F5518500B4BBCC /* OWTextPayloadView.m */; };
+		2718C29415F551A500B4BBCC /* OWImagePayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2718C29315F551A500B4BBCC /* OWImagePayoutView.m */; };
+		27BB3B2B15EFE3E60092A07A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2A15EFE3E60092A07A /* UIKit.framework */; };
+		27BB3B2D15EFE3E60092A07A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2C15EFE3E60092A07A /* Foundation.framework */; };
+		27BB3B2F15EFE3E60092A07A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2E15EFE3E60092A07A /* CoreGraphics.framework */; };
+		27BB3B3515EFE3E60092A07A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27BB3B3315EFE3E60092A07A /* InfoPlist.strings */; };
+		27BB3B3715EFE3E60092A07A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BB3B3615EFE3E60092A07A /* main.m */; };
+		27BB3B3B15EFE3E60092A07A /* OWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BB3B3A15EFE3E60092A07A /* OWAppDelegate.m */; };
+		27BB3B4315EFE3E60092A07A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B4215EFE3E60092A07A /* SenTestingKit.framework */; };
+		27BB3B4415EFE3E60092A07A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2A15EFE3E60092A07A /* UIKit.framework */; };
+		27BB3B4515EFE3E60092A07A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2C15EFE3E60092A07A /* Foundation.framework */; };
+		27BB3B4D15EFE3E60092A07A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27BB3B4B15EFE3E60092A07A /* InfoPlist.strings */; };
+		27BB3B5015EFE3E60092A07A /* OpenWorldiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BB3B4F15EFE3E60092A07A /* OpenWorldiOSTests.m */; };
+		27BB3B5F15EFE4CD0092A07A /* OWPointsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BB3B5E15EFE4CD0092A07A /* OWPointsProvider.m */; };
+		27BB3B6715EFF4AF0092A07A /* OWDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BB3B6615EFF4AF0092A07A /* OWDataPoint.m */; };
+		27BB3B6915EFF4F80092A07A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B6815EFF4F80092A07A /* MapKit.framework */; };
+		27BB3B6B15EFF50D0092A07A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B6A15EFF50D0092A07A /* CoreLocation.framework */; };
+		27BB3B8815F078F40092A07A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B6A15EFF50D0092A07A /* CoreLocation.framework */; };
+		27BB3B8915F078FD0092A07A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B6815EFF4F80092A07A /* MapKit.framework */; };
+		27BB3B9015F099800092A07A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27BB3B8F15F099800092A07A /* MainWindow.xib */; };
+		27BB3B9315F0A0530092A07A /* OWMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BB3B9215F0A0530092A07A /* OWMapViewController.m */; };
+		27BB3B9615F0A07C0092A07A /* OWARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BB3B9515F0A07C0092A07A /* OWARViewController.m */; };
+		27BB3B9915F0A6560092A07A /* OWAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BB3B9815F0A6560092A07A /* OWAnnotation.m */; };
+		27D562D715F66CCF00454254 /* OWPayloadViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D562D615F66CCF00454254 /* OWPayloadViewFactory.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27BB3B4615EFE3E60092A07A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BB3B1D15EFE3E60092A07A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27BB3B2515EFE3E60092A07A;
+			remoteInfo = OpenWorldiOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2718C27D15F1EBCE00B4BBCC /* OWPointDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWPointDetailViewController.m; sourceTree = "<group>"; };
+		2718C28015F1EDA800B4BBCC /* DataDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataDetailView.xib; sourceTree = "<group>"; };
+		2718C28615F517E100B4BBCC /* OWPointsProviderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWPointsProviderDelegate.h; sourceTree = "<group>"; };
+		2718C28715F54F2F00B4BBCC /* OWPayloadProviderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWPayloadProviderDelegate.h; sourceTree = "<group>"; };
+		2718C28815F54F4200B4BBCC /* OWPayloadProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWPayloadProvider.h; sourceTree = "<group>"; };
+		2718C28915F54F4200B4BBCC /* OWPayloadProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWPayloadProvider.m; sourceTree = "<group>"; };
+		2718C28C15F550CA00B4BBCC /* OWPayloadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWPayloadView.h; sourceTree = "<group>"; };
+		2718C28D15F550CA00B4BBCC /* OWPayloadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWPayloadView.m; sourceTree = "<group>"; };
+		2718C28F15F5518500B4BBCC /* OWTextPayloadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWTextPayloadView.h; sourceTree = "<group>"; };
+		2718C29015F5518500B4BBCC /* OWTextPayloadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWTextPayloadView.m; sourceTree = "<group>"; };
+		2718C29215F551A500B4BBCC /* OWImagePayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWImagePayoutView.h; sourceTree = "<group>"; };
+		2718C29315F551A500B4BBCC /* OWImagePayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWImagePayoutView.m; sourceTree = "<group>"; };
+		27BB3B2615EFE3E60092A07A /* OpenWorldiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWorldiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BB3B2A15EFE3E60092A07A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		27BB3B2C15EFE3E60092A07A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		27BB3B2E15EFE3E60092A07A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		27BB3B3215EFE3E60092A07A /* OpenWorldiOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenWorldiOS-Info.plist"; sourceTree = "<group>"; };
+		27BB3B3415EFE3E60092A07A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		27BB3B3615EFE3E60092A07A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		27BB3B3815EFE3E60092A07A /* OpenWorldiOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenWorldiOS-Prefix.pch"; sourceTree = "<group>"; };
+		27BB3B3915EFE3E60092A07A /* OWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OWAppDelegate.h; sourceTree = "<group>"; };
+		27BB3B3A15EFE3E60092A07A /* OWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OWAppDelegate.m; sourceTree = "<group>"; };
+		27BB3B4115EFE3E60092A07A /* OpenWorldiOSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenWorldiOSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BB3B4215EFE3E60092A07A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		27BB3B4A15EFE3E60092A07A /* OpenWorldiOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OpenWorldiOSTests-Info.plist"; sourceTree = "<group>"; };
+		27BB3B4C15EFE3E60092A07A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		27BB3B4E15EFE3E60092A07A /* OpenWorldiOSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenWorldiOSTests.h; sourceTree = "<group>"; };
+		27BB3B4F15EFE3E60092A07A /* OpenWorldiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenWorldiOSTests.m; sourceTree = "<group>"; };
+		27BB3B5D15EFE4CD0092A07A /* OWPointsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWPointsProvider.h; sourceTree = "<group>"; };
+		27BB3B5E15EFE4CD0092A07A /* OWPointsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWPointsProvider.m; sourceTree = "<group>"; };
+		27BB3B6515EFF4AF0092A07A /* OWDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWDataPoint.h; sourceTree = "<group>"; };
+		27BB3B6615EFF4AF0092A07A /* OWDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWDataPoint.m; sourceTree = "<group>"; };
+		27BB3B6815EFF4F80092A07A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		27BB3B6A15EFF50D0092A07A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		27BB3B8F15F099800092A07A /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		27BB3B9115F0A0530092A07A /* OWMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWMapViewController.h; sourceTree = "<group>"; };
+		27BB3B9215F0A0530092A07A /* OWMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWMapViewController.m; sourceTree = "<group>"; };
+		27BB3B9415F0A07C0092A07A /* OWARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWARViewController.h; sourceTree = "<group>"; };
+		27BB3B9515F0A07C0092A07A /* OWARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWARViewController.m; sourceTree = "<group>"; };
+		27BB3B9715F0A6560092A07A /* OWAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWAnnotation.h; sourceTree = "<group>"; };
+		27BB3B9815F0A6560092A07A /* OWAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWAnnotation.m; sourceTree = "<group>"; };
+		27D562D515F66CCF00454254 /* OWPayloadViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWPayloadViewFactory.h; sourceTree = "<group>"; };
+		27D562D615F66CCF00454254 /* OWPayloadViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWPayloadViewFactory.m; sourceTree = "<group>"; };
+		27D562DB15F6926600454254 /* OWPointDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWPointDetailViewController.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27BB3B2315EFE3E60092A07A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BB3B6B15EFF50D0092A07A /* CoreLocation.framework in Frameworks */,
+				27BB3B6915EFF4F80092A07A /* MapKit.framework in Frameworks */,
+				27BB3B2B15EFE3E60092A07A /* UIKit.framework in Frameworks */,
+				27BB3B2D15EFE3E60092A07A /* Foundation.framework in Frameworks */,
+				27BB3B2F15EFE3E60092A07A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BB3B3D15EFE3E60092A07A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BB3B8915F078FD0092A07A /* MapKit.framework in Frameworks */,
+				27BB3B8815F078F40092A07A /* CoreLocation.framework in Frameworks */,
+				27BB3B4315EFE3E60092A07A /* SenTestingKit.framework in Frameworks */,
+				27BB3B4415EFE3E60092A07A /* UIKit.framework in Frameworks */,
+				27BB3B4515EFE3E60092A07A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27BB3B1B15EFE3E60092A07A = {
+			isa = PBXGroup;
+			children = (
+				27BB3B6A15EFF50D0092A07A /* CoreLocation.framework */,
+				27BB3B6815EFF4F80092A07A /* MapKit.framework */,
+				27BB3B3015EFE3E60092A07A /* OpenWorldiOS */,
+				27BB3B4815EFE3E60092A07A /* OpenWorldiOSTests */,
+				27BB3B2915EFE3E60092A07A /* Frameworks */,
+				27BB3B2715EFE3E60092A07A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27BB3B2715EFE3E60092A07A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27BB3B2615EFE3E60092A07A /* OpenWorldiOS.app */,
+				27BB3B4115EFE3E60092A07A /* OpenWorldiOSTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27BB3B2915EFE3E60092A07A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27BB3B2A15EFE3E60092A07A /* UIKit.framework */,
+				27BB3B2C15EFE3E60092A07A /* Foundation.framework */,
+				27BB3B2E15EFE3E60092A07A /* CoreGraphics.framework */,
+				27BB3B4215EFE3E60092A07A /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27BB3B3015EFE3E60092A07A /* OpenWorldiOS */ = {
+			isa = PBXGroup;
+			children = (
+				27BB3B8215F00B860092A07A /* Support Files */,
+				27BB3B3915EFE3E60092A07A /* OWAppDelegate.h */,
+				27BB3B3A15EFE3E60092A07A /* OWAppDelegate.m */,
+				27D562D815F6894200454254 /* Payload Classes */,
+				27D562D915F6897800454254 /* Point Classes */,
+				27D562DB15F6926600454254 /* OWPointDetailViewController.h */,
+				2718C27D15F1EBCE00B4BBCC /* OWPointDetailViewController.m */,
+				27BB3B9115F0A0530092A07A /* OWMapViewController.h */,
+				27BB3B9215F0A0530092A07A /* OWMapViewController.m */,
+				27BB3B9415F0A07C0092A07A /* OWARViewController.h */,
+				27BB3B9515F0A07C0092A07A /* OWARViewController.m */,
+				27BB3B9715F0A6560092A07A /* OWAnnotation.h */,
+				27BB3B9815F0A6560092A07A /* OWAnnotation.m */,
+				27BB3B3115EFE3E60092A07A /* Supporting Files */,
+			);
+			path = OpenWorldiOS;
+			sourceTree = "<group>";
+		};
+		27BB3B3115EFE3E60092A07A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27BB3B3215EFE3E60092A07A /* OpenWorldiOS-Info.plist */,
+				27BB3B8F15F099800092A07A /* MainWindow.xib */,
+				2718C28015F1EDA800B4BBCC /* DataDetailView.xib */,
+				27BB3B3315EFE3E60092A07A /* InfoPlist.strings */,
+				27BB3B3615EFE3E60092A07A /* main.m */,
+				27BB3B3815EFE3E60092A07A /* OpenWorldiOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27BB3B4815EFE3E60092A07A /* OpenWorldiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				27BB3B4E15EFE3E60092A07A /* OpenWorldiOSTests.h */,
+				27BB3B4F15EFE3E60092A07A /* OpenWorldiOSTests.m */,
+				27BB3B4915EFE3E60092A07A /* Supporting Files */,
+			);
+			path = OpenWorldiOSTests;
+			sourceTree = "<group>";
+		};
+		27BB3B4915EFE3E60092A07A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27BB3B4A15EFE3E60092A07A /* OpenWorldiOSTests-Info.plist */,
+				27BB3B4B15EFE3E60092A07A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27BB3B8215F00B860092A07A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		27D562D815F6894200454254 /* Payload Classes */ = {
+			isa = PBXGroup;
+			children = (
+				27D562DA15F6898F00454254 /* Payload Views */,
+				2718C28715F54F2F00B4BBCC /* OWPayloadProviderDelegate.h */,
+				2718C28815F54F4200B4BBCC /* OWPayloadProvider.h */,
+				2718C28915F54F4200B4BBCC /* OWPayloadProvider.m */,
+			);
+			name = "Payload Classes";
+			sourceTree = "<group>";
+		};
+		27D562D915F6897800454254 /* Point Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2718C28615F517E100B4BBCC /* OWPointsProviderDelegate.h */,
+				27BB3B6515EFF4AF0092A07A /* OWDataPoint.h */,
+				27BB3B6615EFF4AF0092A07A /* OWDataPoint.m */,
+				27BB3B5D15EFE4CD0092A07A /* OWPointsProvider.h */,
+				27BB3B5E15EFE4CD0092A07A /* OWPointsProvider.m */,
+			);
+			name = "Point Classes";
+			sourceTree = "<group>";
+		};
+		27D562DA15F6898F00454254 /* Payload Views */ = {
+			isa = PBXGroup;
+			children = (
+				2718C29215F551A500B4BBCC /* OWImagePayoutView.h */,
+				2718C29315F551A500B4BBCC /* OWImagePayoutView.m */,
+				27D562D515F66CCF00454254 /* OWPayloadViewFactory.h */,
+				27D562D615F66CCF00454254 /* OWPayloadViewFactory.m */,
+				2718C28C15F550CA00B4BBCC /* OWPayloadView.h */,
+				2718C28D15F550CA00B4BBCC /* OWPayloadView.m */,
+				2718C28F15F5518500B4BBCC /* OWTextPayloadView.h */,
+				2718C29015F5518500B4BBCC /* OWTextPayloadView.m */,
+			);
+			name = "Payload Views";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27BB3B2515EFE3E60092A07A /* OpenWorldiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BB3B5315EFE3E60092A07A /* Build configuration list for PBXNativeTarget "OpenWorldiOS" */;
+			buildPhases = (
+				27BB3B2215EFE3E60092A07A /* Sources */,
+				27BB3B2315EFE3E60092A07A /* Frameworks */,
+				27BB3B2415EFE3E60092A07A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenWorldiOS;
+			productName = OpenWorldiOS;
+			productReference = 27BB3B2615EFE3E60092A07A /* OpenWorldiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27BB3B4015EFE3E60092A07A /* OpenWorldiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BB3B5615EFE3E60092A07A /* Build configuration list for PBXNativeTarget "OpenWorldiOSTests" */;
+			buildPhases = (
+				27BB3B3C15EFE3E60092A07A /* Sources */,
+				27BB3B3D15EFE3E60092A07A /* Frameworks */,
+				27BB3B3E15EFE3E60092A07A /* Resources */,
+				27BB3B3F15EFE3E60092A07A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27BB3B4715EFE3E60092A07A /* PBXTargetDependency */,
+			);
+			name = OpenWorldiOSTests;
+			productName = OpenWorldiOSTests;
+			productReference = 27BB3B4115EFE3E60092A07A /* OpenWorldiOSTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27BB3B1D15EFE3E60092A07A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OW;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 27BB3B2015EFE3E60092A07A /* Build configuration list for PBXProject "OpenWorldiOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 27BB3B1B15EFE3E60092A07A;
+			productRefGroup = 27BB3B2715EFE3E60092A07A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27BB3B2515EFE3E60092A07A /* OpenWorldiOS */,
+				27BB3B4015EFE3E60092A07A /* OpenWorldiOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27BB3B2415EFE3E60092A07A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BB3B3515EFE3E60092A07A /* InfoPlist.strings in Resources */,
+				27BB3B9015F099800092A07A /* MainWindow.xib in Resources */,
+				2718C28115F1EDA800B4BBCC /* DataDetailView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BB3B3E15EFE3E60092A07A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BB3B4D15EFE3E60092A07A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27BB3B3F15EFE3E60092A07A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27BB3B2215EFE3E60092A07A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BB3B3715EFE3E60092A07A /* main.m in Sources */,
+				27BB3B3B15EFE3E60092A07A /* OWAppDelegate.m in Sources */,
+				27BB3B5F15EFE4CD0092A07A /* OWPointsProvider.m in Sources */,
+				27BB3B6715EFF4AF0092A07A /* OWDataPoint.m in Sources */,
+				27BB3B9315F0A0530092A07A /* OWMapViewController.m in Sources */,
+				27BB3B9615F0A07C0092A07A /* OWARViewController.m in Sources */,
+				27BB3B9915F0A6560092A07A /* OWAnnotation.m in Sources */,
+				2718C27E15F1EBCE00B4BBCC /* OWPointDetailViewController.m in Sources */,
+				2718C28A15F54F4200B4BBCC /* OWPayloadProvider.m in Sources */,
+				2718C28E15F550CA00B4BBCC /* OWPayloadView.m in Sources */,
+				2718C29115F5518500B4BBCC /* OWTextPayloadView.m in Sources */,
+				2718C29415F551A500B4BBCC /* OWImagePayoutView.m in Sources */,
+				27D562D715F66CCF00454254 /* OWPayloadViewFactory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BB3B3C15EFE3E60092A07A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BB3B5015EFE3E60092A07A /* OpenWorldiOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27BB3B4715EFE3E60092A07A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27BB3B2515EFE3E60092A07A /* OpenWorldiOS */;
+			targetProxy = 27BB3B4615EFE3E60092A07A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		27BB3B3315EFE3E60092A07A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27BB3B3415EFE3E60092A07A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		27BB3B4B15EFE3E60092A07A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27BB3B4C15EFE3E60092A07A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27BB3B5115EFE3E60092A07A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27BB3B5215EFE3E60092A07A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27BB3B5415EFE3E60092A07A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenWorldiOS/OpenWorldiOS-Prefix.pch";
+				INFOPLIST_FILE = "OpenWorldiOS/OpenWorldiOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		27BB3B5515EFE3E60092A07A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenWorldiOS/OpenWorldiOS-Prefix.pch";
+				INFOPLIST_FILE = "OpenWorldiOS/OpenWorldiOS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		27BB3B5715EFE3E60092A07A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OpenWorldiOS.app/OpenWorldiOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenWorldiOS/OpenWorldiOS-Prefix.pch";
+				INFOPLIST_FILE = "OpenWorldiOSTests/OpenWorldiOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		27BB3B5815EFE3E60092A07A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OpenWorldiOS.app/OpenWorldiOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenWorldiOS/OpenWorldiOS-Prefix.pch";
+				INFOPLIST_FILE = "OpenWorldiOSTests/OpenWorldiOSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27BB3B2015EFE3E60092A07A /* Build configuration list for PBXProject "OpenWorldiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BB3B5115EFE3E60092A07A /* Debug */,
+				27BB3B5215EFE3E60092A07A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27BB3B5315EFE3E60092A07A /* Build configuration list for PBXNativeTarget "OpenWorldiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BB3B5415EFE3E60092A07A /* Debug */,
+				27BB3B5515EFE3E60092A07A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27BB3B5615EFE3E60092A07A /* Build configuration list for PBXNativeTarget "OpenWorldiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BB3B5715EFE3E60092A07A /* Debug */,
+				27BB3B5815EFE3E60092A07A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27BB3B1D15EFE3E60092A07A /* Project object */;
+}
