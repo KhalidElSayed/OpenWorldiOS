@@ -42,9 +42,9 @@
     double lonSpan = userRegion.span.longitudeDelta;
     double lat = userRegion.center.latitude;
     double lon = userRegion.center.longitude;
-    NSLog([NSString stringWithFormat:@"lat=%f&lon=%f&latspan=%f&lonspan=%f",lat,lon,latSpan,lonSpan] );
+    NSLog([NSString stringWithFormat:@"lat=%f&lon=%f&latspan=%f&lonspan=%f&datatype=ahFzfm9wZW53b3JsZHNlcnZlcnIRCxIKT1dEYXRhVHlwZRiwRgw",lat,lon,latSpan,lonSpan] );
 
-    [postBody appendData:[[NSString stringWithFormat:@"lat=%f&lon=%f&latspan=%f&lonspan=%f&datatype=0",lat,lon,latSpan,lonSpan] dataUsingEncoding:NSUTF8StringEncoding]];    
+    [postBody appendData:[[NSString stringWithFormat:@"lat=%f&lon=%f&latspan=%f&lonspan=%f&datatype=ahFzfm9wZW53b3JsZHNlcnZlcnIRCxIKT1dEYXRhVHlwZRiwRgw",lat,lon,latSpan,lonSpan] dataUsingEncoding:NSUTF8StringEncoding]];    
     [dataRequest setHTTPBody:postBody];
     
     [self setGetDataPointsConnection:[[NSURLConnection alloc] initWithRequest:dataRequest delegate:self startImmediately:YES]];
