@@ -26,7 +26,12 @@
     return self;
 }
 - (IBAction) payloadTypeButton{
-    [detailViewController switchPayload]; 
+    //[detailViewController switchPayload]; 
+
+    OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
+
+    [self presentModalViewController:[mainDelegate dataTypeSelectViewController] animated:YES];
+    [[mainDelegate dataTypeSelectViewController] updateDataTypes];
 }
 - (void)viewDidLoad
 {
@@ -155,7 +160,7 @@
         if(pointDictionary){
             CLLocationCoordinate2D tmpPoint;
             NSString *latString = [pointDictionary valueForKey:@"lat"];
-            NSString *longString = [pointDictionary valueForKey:@"long"];
+            NSString *longString = [pointDictionary valueForKey:@"lon"];
             NSString *title = [pointDictionary valueForKey:@"title"];
             NSString *description = [pointDictionary valueForKey:@"description"];
             NSString *created = [pointDictionary valueForKey:@"created"];

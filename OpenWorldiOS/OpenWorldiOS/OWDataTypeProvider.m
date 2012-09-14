@@ -1,65 +1,56 @@
 //
-//  OWDataProvider.m
+//  OWDataTypeProvider.m
 //  OpenWorldiOS
 //
-//  Created by Edward Williams on 8/30/12.
+//  Created by Edward Williams on 9/14/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
-#import "OWPointsProvider.h"
-#import "OWAppDelegate.h"
 
-@implementation OWPointsProvider
-@synthesize dataType,dataArray,getDataPointsConnection,receivedData,delegate;
+#import "OWDataTypeProvider.h"
 
-- (id) init: (NSString *) dataUrlString{
+@implementation OWDataTypeProvider
+
+@synthesize getDataTypesConnection,receivedData,delegate,dataArray;
+- (id) init: (NSString *) urlString{
     
     if(self = [super init]){
-        owDataURLString = dataUrlString;
-        dataType = [[OWDataType alloc] init];
-        dataType.name = @"";
-        dataType.key = @"";
+        owDataTypeURLString = urlString;
     }
     
     return self;
 }
 
-- (BOOL) updatePointList: (MKCoordinateRegion) userRegion{
+- (BOOL) updateDataTypeList{
     
     //if connection already established, cancel before starting new one
-    if (getDataPointsConnection) {
-        [getDataPointsConnection cancel];
+    if (getDataTypesConnection) {
+        [getDataTypesConnection cancel];
     }
     
     
-    NSURL *dataUrl = [NSURL URLWithString:owDataURLString];
+    NSURL *dataUrl = [NSURL URLWithString:owDataTypeURLString];
 	NSMutableURLRequest *dataRequest = [NSMutableURLRequest requestWithURL:dataUrl];
     [dataRequest setHTTPMethod:@"POST"];
     NSString *contentType = [NSString stringWithFormat:@"application/x-www-form-urlencoded"];
     [dataRequest setValue:contentType forHTTPHeaderField:@"Content-type"];
     
     NSMutableData *postBody = [NSMutableData data];
-    
-
-    
-    double latSpan = userRegion.span.latitudeDelta;
-    double lonSpan = userRegion.span.longitudeDelta;
-    double lat = userRegion.center.latitude;
-    double lon = userRegion.center.longitude;
-    NSLog([NSString stringWithFormat:@"lat=%f&lon=%f&latspan=%f&lonspan=%f&datatype=ahFzfm9wZW53b3JsZHNlcnZlcnISCxIKT1dEYXRhVHlwZRiayAIM",lat,lon,latSpan,lonSpan] );
-
-    [postBody appendData:[[NSString stringWithFormat:@"lat=%f&lon=%f&latspan=%f&lonspan=%f&datatype=%@",lat,lon,latSpan,lonSpan,dataType.key] dataUsingEncoding:NSUTF8StringEncoding]];    
+  
+ 
     [dataRequest setHTTPBody:postBody];
     
-    [self setGetDataPointsConnection:[[NSURLConnection alloc] initWithRequest:dataRequest delegate:self startImmediately:YES]];
+    [self setGetDataTypesConnection:[[NSURLConnection alloc] initWithRequest:dataRequest delegate:self startImmediately:YES]];
     
     BOOL connectionStarted = NO;
-
-    if(getDataPointsConnection){
+    
+    if(getDataTypesConnection){
         receivedData=[NSMutableData data];
         connectionStarted = YES;
     }
     return connectionStarted;
 }
+
+
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     // this method is called when the server has determined that it
@@ -81,7 +72,7 @@
 - (void)connection:(NSURLConnection *)connection
   didFailWithError:(NSError *)error
 {
- 
+    
     connection = nil;
     receivedData = nil;
     // inform the user
@@ -92,7 +83,7 @@
 	
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failed" message:@"Could not establish connection to the Virtual Graffiti database. Please verify you are connected to the internet and try again. " delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
 	[alert show];
-     
+    
     [delegate finishedUpdatingPoints:nil];
 }
 
@@ -104,29 +95,29 @@
 	
  	
     // release the connection, and the data object
- 
- 
+    
+    
  	
 	NSString * responseString =  [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
-
+    
 	
-   NSLog(responseString);
+    NSLog(responseString);
     //quick check for invalid response
 	if([[responseString substringToIndex:1] compare:@"["] != 0  ){
 		
         //if retryConnection is true, than we failed on a retry -- stop and show error msg
- 
+        
 		
- 
+        
         responseString = nil;
         connection = nil;
         receivedData = nil;
 		
- 
-               
-            
+        
+        
+        
         [delegate finishedUpdatingPoints:nil];
-
+        
 		return;
 	}
 	
@@ -134,20 +125,21 @@
 	NSError *error =nil;
 	dataArray = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers error:&error];
     
- 
+    
 	
     responseString = nil;
     connection = nil;
     receivedData = nil;
     error = nil;
     
- 
+    
 	
 	
 	
     [delegate finishedUpdatingPoints:dataArray];
-
+    
 	
 }
+
 
 @end

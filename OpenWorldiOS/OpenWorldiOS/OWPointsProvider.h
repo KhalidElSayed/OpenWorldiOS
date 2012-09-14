@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h> 
 #import "OWPointsProviderDelegate.h"
+#import "OWDataType.h"
 #define kMaxResults   199    /**< Maximum number of results*/
 
 @interface OWPointsProvider : NSObject
@@ -23,12 +24,14 @@
     id <OWPointsProviderDelegate> delegate;
     
     NSArray *dataArray;
+    OWDataType *dataType;
 }
 
 @property (nonatomic, retain) 	NSURLConnection *getDataPointsConnection;	
 @property (nonatomic, retain) NSMutableData *receivedData;
 @property (retain, nonatomic) id <OWPointsProviderDelegate> delegate;
 @property (retain, nonatomic) NSArray *dataArray;
+@property (retain, nonatomic) OWDataType *dataType;
 
 /**
  Attempts to open a connection to the OWServer and recieve the dataPoints that are within the user's map region.

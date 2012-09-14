@@ -1,0 +1,179 @@
+//
+//  OWDataTypeSelectViewController.m
+//  OpenWorldiOS
+//
+//  Created by Edward Williams on 9/14/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import "OWDataTypeSelectViewController.h"
+#import "OWAppDelegate.h"
+#import "OWMapViewController.h"
+@interface OWDataTypeSelectViewController ()
+
+@end
+
+@implementation OWDataTypeSelectViewController
+
+@synthesize selectedDataType,availableDataTypes,dataTypeProvider;
+
+- (void) finishedUpdatingPoints :(NSArray *) array{
+    
+    //clear current list  + init list if first one
+    [self setAvailableDataTypes:[[NSMutableArray alloc] init]];
+    
+    for (int i = 0; i < [array count]; i++){
+        NSDictionary *dataTypeDictionary = [array objectAtIndex:i];
+        if(dataTypeDictionary){
+            NSString *dataTypeName = [dataTypeDictionary valueForKey:@"dataName"];
+            NSString *dataTypeKey = [dataTypeDictionary valueForKey:@"key"];
+            OWDataType *newDataType = [[OWDataType alloc] init];
+            [newDataType setKey:dataTypeKey];
+            [newDataType setName:dataTypeName];
+            [availableDataTypes addObject:newDataType];
+            
+        }
+    }
+
+    [[self tableView] reloadData];
+    
+}
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self setDataTypeProvider:[[OWDataTypeProvider alloc] init:@"http://openworldserver.appspot.com/getDataTypes"]];
+    [dataTypeProvider setDelegate:self];
+    [dataTypeProvider updateDataTypeList];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+- (IBAction)dismiss{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void) updateDataTypes{
+    [dataTypeProvider updateDataTypeList];
+}
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+     // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+     // Return the number of rows in the section.
+    
+    if (availableDataTypes == nil) {
+        return  0;
+    }
+    else{
+        return [availableDataTypes count];
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    // Configure the cell...
+    
+    OWDataType *dataType = [availableDataTypes objectAtIndex:indexPath.row];
+    
+    
+    [cell.textLabel setText:dataType.name];
+    
+    return cell;
+}
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    [[mainDelegate dataProvider] setDataType:[availableDataTypes objectAtIndex:indexPath.row]];
+    [self dismissModalViewControllerAnimated:YES];
+    
+    [mainDelegate updatePoints];
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
+}
+
+@end
