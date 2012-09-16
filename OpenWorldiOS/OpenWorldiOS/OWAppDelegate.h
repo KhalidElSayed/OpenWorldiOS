@@ -13,7 +13,7 @@
 #import "OWPointsProvider.h"
 #import "OWDataTypeSelectViewController.h"
 
-@interface OWAppDelegate : UIResponder <UIApplicationDelegate, OWPointsProviderDelegate>{
+@interface OWAppDelegate : UIResponder <UIApplicationDelegate, OWConnectionDelegate>{
     UIWindow *window;
     UITabBarController *tabBarController;
     OWPointsProvider *dataProvider;

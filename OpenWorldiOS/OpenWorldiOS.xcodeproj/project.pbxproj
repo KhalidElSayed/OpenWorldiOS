@@ -17,6 +17,11 @@
 		27413CB8160314370075CDCC /* OWDataTypeSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27413CB6160314370075CDCC /* OWDataTypeSelectViewController.m */; };
 		27413CB9160314370075CDCC /* OWDataTypeSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27413CB7160314370075CDCC /* OWDataTypeSelectViewController.xib */; };
 		27413CBD16031C200075CDCC /* OWDataTypeProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 27413CBC16031C200075CDCC /* OWDataTypeProvider.m */; };
+		27413CC51606542D0075CDCC /* OWAddPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27413CC31606542C0075CDCC /* OWAddPointViewController.m */; };
+		27413CC61606542D0075CDCC /* OWAddPointViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27413CC41606542C0075CDCC /* OWAddPointViewController.xib */; };
+		27413CCA160655220075CDCC /* OWAddPayloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27413CC8160655210075CDCC /* OWAddPayloadViewController.m */; };
+		27413CCB160655220075CDCC /* OWAddPayloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27413CC9160655210075CDCC /* OWAddPayloadViewController.xib */; };
+		27413CCE160662140075CDCC /* OWConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 27413CCD160662140075CDCC /* OWConnection.m */; };
 		27BB3B2B15EFE3E60092A07A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2A15EFE3E60092A07A /* UIKit.framework */; };
 		27BB3B2D15EFE3E60092A07A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2C15EFE3E60092A07A /* Foundation.framework */; };
 		27BB3B2F15EFE3E60092A07A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2E15EFE3E60092A07A /* CoreGraphics.framework */; };
@@ -72,6 +77,15 @@
 		27413CBA16031BF40075CDCC /* OWDataTypeProviderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWDataTypeProviderDelegate.h; sourceTree = "<group>"; };
 		27413CBB16031C200075CDCC /* OWDataTypeProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWDataTypeProvider.h; sourceTree = "<group>"; };
 		27413CBC16031C200075CDCC /* OWDataTypeProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWDataTypeProvider.m; sourceTree = "<group>"; };
+		27413CC21606542B0075CDCC /* OWAddPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWAddPointViewController.h; sourceTree = "<group>"; };
+		27413CC31606542C0075CDCC /* OWAddPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWAddPointViewController.m; sourceTree = "<group>"; };
+		27413CC41606542C0075CDCC /* OWAddPointViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OWAddPointViewController.xib; sourceTree = "<group>"; };
+		27413CC7160655200075CDCC /* OWAddPayloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWAddPayloadViewController.h; sourceTree = "<group>"; };
+		27413CC8160655210075CDCC /* OWAddPayloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWAddPayloadViewController.m; sourceTree = "<group>"; };
+		27413CC9160655210075CDCC /* OWAddPayloadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OWAddPayloadViewController.xib; sourceTree = "<group>"; };
+		27413CCC160662140075CDCC /* OWConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWConnection.h; sourceTree = "<group>"; };
+		27413CCD160662140075CDCC /* OWConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWConnection.m; sourceTree = "<group>"; };
+		27413CCF160667390075CDCC /* OWConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWConnectionDelegate.h; sourceTree = "<group>"; };
 		27BB3B2615EFE3E60092A07A /* OpenWorldiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWorldiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BB3B2A15EFE3E60092A07A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27BB3B2C15EFE3E60092A07A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -187,11 +201,20 @@
 				27BB3B8215F00B860092A07A /* Support Files */,
 				27BB3B3915EFE3E60092A07A /* OWAppDelegate.h */,
 				27BB3B3A15EFE3E60092A07A /* OWAppDelegate.m */,
+				27413CCF160667390075CDCC /* OWConnectionDelegate.h */,
+				27413CCC160662140075CDCC /* OWConnection.h */,
+				27413CCD160662140075CDCC /* OWConnection.m */,
 				27D562D815F6894200454254 /* Payload Classes */,
 				27D562D915F6897800454254 /* Point Classes */,
 				27413CA9160312780075CDCC /* DataType Classes */,
 				27D562DB15F6926600454254 /* OWPointDetailViewController.h */,
 				2718C27D15F1EBCE00B4BBCC /* OWPointDetailViewController.m */,
+				27413CC21606542B0075CDCC /* OWAddPointViewController.h */,
+				27413CC31606542C0075CDCC /* OWAddPointViewController.m */,
+				27413CC41606542C0075CDCC /* OWAddPointViewController.xib */,
+				27413CC7160655200075CDCC /* OWAddPayloadViewController.h */,
+				27413CC8160655210075CDCC /* OWAddPayloadViewController.m */,
+				27413CC9160655210075CDCC /* OWAddPayloadViewController.xib */,
 				27BB3B9115F0A0530092A07A /* OWMapViewController.h */,
 				27BB3B9215F0A0530092A07A /* OWMapViewController.m */,
 				27BB3B9415F0A07C0092A07A /* OWARViewController.h */,
@@ -355,6 +378,8 @@
 				27BB3B9015F099800092A07A /* MainWindow.xib in Resources */,
 				2718C28115F1EDA800B4BBCC /* DataDetailView.xib in Resources */,
 				27413CB9160314370075CDCC /* OWDataTypeSelectViewController.xib in Resources */,
+				27413CC61606542D0075CDCC /* OWAddPointViewController.xib in Resources */,
+				27413CCB160655220075CDCC /* OWAddPayloadViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +430,9 @@
 				27413CA7160311A20075CDCC /* OWDataType.m in Sources */,
 				27413CB8160314370075CDCC /* OWDataTypeSelectViewController.m in Sources */,
 				27413CBD16031C200075CDCC /* OWDataTypeProvider.m in Sources */,
+				27413CC51606542D0075CDCC /* OWAddPointViewController.m in Sources */,
+				27413CCA160655220075CDCC /* OWAddPayloadViewController.m in Sources */,
+				27413CCE160662140075CDCC /* OWConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

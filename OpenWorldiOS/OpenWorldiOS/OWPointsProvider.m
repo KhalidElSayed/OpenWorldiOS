@@ -9,145 +9,35 @@
 #import "OWAppDelegate.h"
 
 @implementation OWPointsProvider
-@synthesize dataType,dataArray,getDataPointsConnection,receivedData,delegate;
+@synthesize dataType;
 
-- (id) init: (NSString *) dataUrlString{
+- (id) init: (NSString *) urlString{
     
-    if(self = [super init]){
-        owDataURLString = dataUrlString;
+    if(self = [super init:urlString]){
         dataType = [[OWDataType alloc] init];
         dataType.name = @"";
         dataType.key = @"";
+        currentRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(0, 0),MKCoordinateSpanMake(1, 1 ));
     }
     
     return self;
 }
 
-- (BOOL) updatePointList: (MKCoordinateRegion) userRegion{
+- (NSData *) connectionInputData{
     
-    //if connection already established, cancel before starting new one
-    if (getDataPointsConnection) {
-        [getDataPointsConnection cancel];
-    }
-    
-    
-    NSURL *dataUrl = [NSURL URLWithString:owDataURLString];
-	NSMutableURLRequest *dataRequest = [NSMutableURLRequest requestWithURL:dataUrl];
-    [dataRequest setHTTPMethod:@"POST"];
-    NSString *contentType = [NSString stringWithFormat:@"application/x-www-form-urlencoded"];
-    [dataRequest setValue:contentType forHTTPHeaderField:@"Content-type"];
-    
-    NSMutableData *postBody = [NSMutableData data];
-    
-
-    
-    double latSpan = userRegion.span.latitudeDelta;
-    double lonSpan = userRegion.span.longitudeDelta;
-    double lat = userRegion.center.latitude;
-    double lon = userRegion.center.longitude;
+    double latSpan = currentRegion.span.latitudeDelta;
+    double lonSpan = currentRegion.span.longitudeDelta;
+    double lat = currentRegion.center.latitude;
+    double lon = currentRegion.center.longitude;
     NSLog([NSString stringWithFormat:@"lat=%f&lon=%f&latspan=%f&lonspan=%f&datatype=ahFzfm9wZW53b3JsZHNlcnZlcnISCxIKT1dEYXRhVHlwZRiayAIM",lat,lon,latSpan,lonSpan] );
-
-    [postBody appendData:[[NSString stringWithFormat:@"lat=%f&lon=%f&latspan=%f&lonspan=%f&datatype=%@",lat,lon,latSpan,lonSpan,dataType.key] dataUsingEncoding:NSUTF8StringEncoding]];    
-    [dataRequest setHTTPBody:postBody];
     
-    [self setGetDataPointsConnection:[[NSURLConnection alloc] initWithRequest:dataRequest delegate:self startImmediately:YES]];
-    
-    BOOL connectionStarted = NO;
-
-    if(getDataPointsConnection){
-        receivedData=[NSMutableData data];
-        connectionStarted = YES;
-    }
-    return connectionStarted;
-}
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    // this method is called when the server has determined that it
-    // has enough information to create the NSURLResponse
-	
-    // it can be called multiple times, for example in the case of a
-    // redirect, so each time we reset the data.
-    // receivedData is declared as a method instance elsewhere
-    [receivedData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    // append the new data to the receivedData
-    // receivedData is declared as a method instance elsewhere
-    [receivedData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection
-  didFailWithError:(NSError *)error
-{
- 
-    connection = nil;
-    receivedData = nil;
-    // inform the user
-    NSLog(@"Connection failed! Error - %@ %@",
-          [error localizedDescription],
-          [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
-	
-	
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failed" message:@"Could not establish connection to the Virtual Graffiti database. Please verify you are connected to the internet and try again. " delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-	[alert show];
+     return  [[NSString stringWithFormat:@"lat=%f&lon=%f&latspan=%f&lonspan=%f&datatype=%@",lat,lon,latSpan,lonSpan,dataType.key] dataUsingEncoding:NSUTF8StringEncoding];  
      
-    [delegate finishedUpdatingPoints:nil];
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    // do something with the data
-    // receivedData is declared as a method instance elsewhere
-    //  NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
-	
- 	
-    // release the connection, and the data object
- 
- 
- 	
-	NSString * responseString =  [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
-
-	
-   NSLog(responseString);
-    //quick check for invalid response
-	if([[responseString substringToIndex:1] compare:@"["] != 0  ){
-		
-        //if retryConnection is true, than we failed on a retry -- stop and show error msg
- 
-		
- 
-        responseString = nil;
-        connection = nil;
-        receivedData = nil;
-		
- 
-               
-            
-        [delegate finishedUpdatingPoints:nil];
-
-		return;
-	}
-	
-	
-	NSError *error =nil;
-	dataArray = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers error:&error];
-    
- 
-	
-    responseString = nil;
-    connection = nil;
-    receivedData = nil;
-    error = nil;
-    
- 
-	
-	
-	
-    [delegate finishedUpdatingPoints:dataArray];
-
-	
+- (BOOL) startConnection:  (MKCoordinateRegion) userRegion{
+    currentRegion = userRegion;
+    return [self startConnection];
 }
 
 @end

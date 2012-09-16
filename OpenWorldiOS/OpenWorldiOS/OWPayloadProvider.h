@@ -8,24 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "OWPayloadProviderDelegate.h"
-#import "OWAppDelegate.h"
-@interface OWPayloadProvider : NSObject{
-    NSString *owPayloadURLString;  /**< Constant specifiying URL of OWServer Payloads  */
-    NSURLConnection *getPayloadConnection;  /**< Connection to OWServer */
-    NSMutableData *receivedData; /**< Data recieved from OWServer  */
-    id <OWPayloadProviderDelegate> delegate;
-    NSDictionary *payloadDictionary;
+#import "OWConnection.h"
+@interface OWPayloadProvider : OWConnection{
 
+    NSDictionary *payloadDictionary;
+    NSString *mPointKey;
+    int mPayloadIndex;
+    NSString *mDataTypeKey;
 
 }
 
-@property (nonatomic, retain) 	NSString *owPayloadURLString;  /**< Constant specifiying URL of OWServer Payloads  */
-@property (nonatomic, retain) 	NSURLConnection *getPayloadConnection;	
-@property (nonatomic, retain) NSMutableData *receivedData;
-@property (retain, nonatomic) id <OWPayloadProviderDelegate> delegate;
 @property (nonatomic, retain) NSDictionary *payloadDictionary;
 
-- (BOOL) getPayload: (NSString *) pointKey: (int) payloadIndex;
-- (id) init: (NSString *) dataUrlString;
-
+- (BOOL) startConnection: (NSString *) pointKey: (NSString *) dataTypeKey: (int) payloadIndex;
 @end

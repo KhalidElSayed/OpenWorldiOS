@@ -18,13 +18,16 @@
         [(OWMapViewController *) [[tabBarController viewControllers] objectAtIndex:0] updateMapView:array];
     }
 }
+- (void) connectionFailed: (NSError *) error{
+    
+}
 - (MKCoordinateRegion) getUserRegion{
     return [[(OWMapViewController *) [[tabBarController viewControllers] objectAtIndex:0] mapView] region];
    // return MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.77, -122.4), MKCoordinateSpanMake(.10, .10));
    // return MKCoordinateRegionMake(CLLocationCoordinate2DMake(0, 0), MKCoordinateSpanMake(0, 0));
 }
 - (void) updatePoints{
-    [dataProvider updatePointList:[self getUserRegion]];
+    [dataProvider startConnection:[self getUserRegion]];
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -39,7 +42,7 @@
     
     [self setDataProvider:[[OWPointsProvider alloc] init:@"http://openworldserver.appspot.com"]];
     [dataProvider setDelegate:self];
-    [dataProvider updatePointList:[self getUserRegion]];
+    [dataProvider startConnection:[self getUserRegion]];
     
     
     [self setDataTypeSelectViewController:[[OWDataTypeSelectViewController alloc] initWithNibName:@"OWDataTypeSelectViewController" bundle:nil]];

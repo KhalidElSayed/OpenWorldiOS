@@ -38,6 +38,10 @@
     [[self tableView] reloadData];
     
 }
+
+- (void) connectionFailed: (NSError *) error{
+    
+}
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -53,7 +57,7 @@
     
     [self setDataTypeProvider:[[OWDataTypeProvider alloc] init:@"http://openworldserver.appspot.com/getDataTypes"]];
     [dataTypeProvider setDelegate:self];
-    [dataTypeProvider updateDataTypeList];
+    [dataTypeProvider startConnection];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -65,7 +69,7 @@
 }
 
 - (void) updateDataTypes{
-    [dataTypeProvider updateDataTypeList];
+    [dataTypeProvider startConnection];
 }
 - (void)viewDidUnload
 {

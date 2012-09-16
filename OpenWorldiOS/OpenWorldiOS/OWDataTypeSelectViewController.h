@@ -10,7 +10,7 @@
 #import "OWDataTypeProviderDelegate.h"
 #import "OWDataTypeProvider.h"
 #import "OWDataType.h"
-@interface OWDataTypeSelectViewController : UITableViewController <OWDataTypeProviderDelegate>{
+@interface OWDataTypeSelectViewController : UITableViewController <OWConnectionDelegate>{
 
     OWDataTypeProvider *dataTypeProvider;
     NSMutableArray *availableDataTypes;

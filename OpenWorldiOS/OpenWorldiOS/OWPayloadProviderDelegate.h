@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "OWAppDelegate.h"
 
-@protocol OWPayloadProviderDelegate <NSObject>
+@protocol OWPayloadProviderDelegate <OWConnectionDelegate>
 - (void) finishedRetrievingPayload :(NSString *) payload: (OWPayloadType) type;
 
 @end

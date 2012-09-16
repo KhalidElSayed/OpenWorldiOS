@@ -11,7 +11,7 @@
 #import "OWPayloadProvider.h"
 #import "OWPayloadView.h"
 #import "OWPayloadViewFactory.h"
-@interface OWPointDetailViewController : UIViewController <OWPayloadProviderDelegate>{
+@interface OWPointDetailViewController : UIViewController <OWConnectionDelegate>{
     
     OWPayloadProvider *payloadProvider;
     

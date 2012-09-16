@@ -12,32 +12,23 @@
 #import <CoreLocation/CoreLocation.h> 
 #import "OWPointsProviderDelegate.h"
 #import "OWDataType.h"
+#import "OWConnection.h"
 #define kMaxResults   199    /**< Maximum number of results*/
 
-@interface OWPointsProvider : NSObject
+@interface OWPointsProvider : OWConnection
 {
 
-     NSURLConnection *getDataPointsConnection;  /**< Connection to OWServer */
-    NSMutableData *receivedData; /**< Data recieved from OWServer  */
-    NSString *owDataURLString;  /**< Constant specifiying URL of OWServer  */
- 	CLLocationCoordinate2D locations[kMaxResults]; 
-    id <OWPointsProviderDelegate> delegate;
-    
-    NSArray *dataArray;
+    	CLLocationCoordinate2D locations[kMaxResults]; 
+     
     OWDataType *dataType;
+    MKCoordinateRegion currentRegion;
 }
 
-@property (nonatomic, retain) 	NSURLConnection *getDataPointsConnection;	
-@property (nonatomic, retain) NSMutableData *receivedData;
-@property (retain, nonatomic) id <OWPointsProviderDelegate> delegate;
-@property (retain, nonatomic) NSArray *dataArray;
 @property (retain, nonatomic) OWDataType *dataType;
 
 /**
  Attempts to open a connection to the OWServer and recieve the dataPoints that are within the user's map region.
  @returns YES if connection made, NO if connection was not made
  */
-- (BOOL) updatePointList: (MKCoordinateRegion) userRegion;
-
-- (id) init: (NSString *) dataUrlString;
+- (BOOL) startConnection:  (MKCoordinateRegion) userRegion;
 @end

@@ -27,6 +27,7 @@
     }
     return self;
 }
+/*
 - (void) switchPayload{
     payloadType++;
     if (payloadType == 2) {
@@ -44,6 +45,7 @@
     }
     
 }
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -64,8 +66,17 @@
 - (IBAction) dismissView{
     [self dismissModalViewControllerAnimated:YES];
 }
-- (void) finishedRetrievingPayload :(NSString *) payload: (OWPayloadType) type{
+
+- (void) connectionFailed: (NSError *) error{
     
+}
+- (void) finishedUpdatingPoints: (NSArray *) array{
+    
+    NSDictionary *payloadDictionary = [array objectAtIndex:0];
+    
+    NSString *payload = [payloadDictionary objectForKey:@"payload"];
+    OWPayloadType type = [[payloadDictionary objectForKey:@"payloadType"] intValue];
+	
     if (payload == nil) {
         //TODO show alert error message
     }
@@ -84,8 +95,8 @@
 
 
 - (BOOL) getPayload: (NSString *) pointKey: (int) payloadIndex{
-    
-    return [payloadProvider getPayload:pointKey :payloadIndex];
+
+    return [payloadProvider startConnection:pointKey :@"" :payloadIndex];
 }
 
 @end

@@ -53,7 +53,7 @@
 }
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
     OWAppDelegate *mainDelegate  = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
-    [[mainDelegate dataProvider] updatePointList:[mapView region]]; 
+    [[mainDelegate dataProvider] startConnection:[mapView region]]; 
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
