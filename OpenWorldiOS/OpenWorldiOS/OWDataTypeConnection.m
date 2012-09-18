@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "OWDataTypeProvider.h"
+#import "OWDataTypeConnection.h"
 
-@implementation OWDataTypeProvider
+@implementation OWDataTypeConnection
 
 
 

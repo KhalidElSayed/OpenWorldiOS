@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OWPayloadProviderDelegate.h"
 #import "OWConnection.h"
-@interface OWPayloadProvider : OWConnection{
+@interface OWPayloadConnection : OWConnection{
 
     NSDictionary *payloadDictionary;
     NSString *mPointKey;

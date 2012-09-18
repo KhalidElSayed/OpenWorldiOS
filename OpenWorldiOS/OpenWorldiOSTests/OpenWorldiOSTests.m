@@ -16,7 +16,7 @@
 {
     [super setUp];
     mainDelegate = [[UIApplication sharedApplication] delegate];
-    owDataProvider = [[OWPointsProvider alloc] init:@"http://10.latest.geo-tag.appspot.com/getall"];
+    owDataProvider = [[OWPointsConnection alloc] init:@"http://10.latest.geo-tag.appspot.com/getall"];
     [owDataProvider setDelegate:self];
      // Set-up code here.
 }
@@ -52,8 +52,8 @@
 }
 
 
-- (void) finishedUpdatingPoints:(NSArray *) array{
-    dataArray = array;
+- (void) finishedUpdatingPoints:(NSObject *) arrayOrDictionary{
+    dataArray = (NSArray *) arrayOrDictionary;
     if(dataArray)
         NSLog(@"YES");
     NSLog(@"Delegatefinished");

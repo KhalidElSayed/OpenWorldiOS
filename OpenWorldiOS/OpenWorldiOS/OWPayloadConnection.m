@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "OWPayloadProvider.h"
+#import "OWPayloadConnection.h"
 
-@implementation OWPayloadProvider
+@implementation OWPayloadConnection
 @synthesize payloadDictionary;
 
 - (id) init: (NSString *) urlString{

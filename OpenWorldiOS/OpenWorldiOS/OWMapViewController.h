@@ -10,15 +10,17 @@
 #import <CoreLocation/CoreLocation.h> 
 #import <MapKit/MapKit.h>
 #import "OWPointDetailViewController.h"
-
+#import "OWAddPointViewController.h"
 
 @interface OWMapViewController : UIViewController <MKMapViewDelegate>{
     MKMapView *mapView;
     OWPointDetailViewController *detailViewController;
+    OWAddPointViewController *addPointViewController;
 }
 @property (nonatomic,retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) OWPointDetailViewController *detailViewController;
-
+@property (nonatomic, retain) OWAddPointViewController *addPointViewController;
+- (IBAction) addPointAction;
 - (void) updateMapView: (NSArray *) array;
 - (IBAction) payloadTypeButton;
  @end

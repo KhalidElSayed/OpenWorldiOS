@@ -9,11 +9,11 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 #import "OWAppDelegate.h"
-#import "OWPointsProvider.h"
+#import "OWPointsConnection.h"
 
 @interface OpenWorldiOSTests : SenTestCase <OWPointsProviderDelegate>{
     OWAppDelegate *mainDelegate;
-    OWPointsProvider *owDataProvider;
+    OWPointsConnection *owDataProvider;
     NSArray * dataArray;
 }
 

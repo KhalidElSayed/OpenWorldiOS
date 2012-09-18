@@ -9,7 +9,7 @@
 #import "OWAnnotation.h"
 
 @implementation OWAnnotation
-@synthesize coordinate,t,created,description,date,key,category;
+@synthesize coordinate,t,created,description,date,key,category,dataTypeKey;
 -(id)initWithCoordinate:(CLLocationCoordinate2D)_cord{
 	if([self init])
 	{

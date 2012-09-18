@@ -17,6 +17,7 @@
 	NSDate *date;
 	NSString *key;
 	int category;
+    NSString *dataTypeKey;
 }
 -(id)initWithCoordinate:(CLLocationCoordinate2D)_cord;
 -(id)initWithCoordinate:(CLLocationCoordinate2D)_cord:(NSString *) tit:(NSString *)descrip :(NSString *) create: (NSDate *) d;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) NSString *t;
 @property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) NSString *key;
+@property (nonatomic, retain) NSString *dataTypeKey;
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 

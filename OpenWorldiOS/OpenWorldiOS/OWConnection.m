@@ -108,16 +108,7 @@
 	
     NSLog(responseString);
     //quick check for invalid response
-	if([[responseString substringToIndex:1] compare:@"["] != 0  ){
-		
-        //if retryConnection is true, than we failed on a retry -- stop and show error msg
-        responseString = nil;
-        connection = nil;
-        receivedData = nil;
-        [delegate finishedUpdatingPoints:nil];
-        
-		return;
-	}
+
 
     
     NSError *error =nil;

@@ -5,10 +5,10 @@
 //  Created by Edward Williams on 8/30/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
-#import "OWPointsProvider.h"
+#import "OWPointsConnection.h"
 #import "OWAppDelegate.h"
 
-@implementation OWPointsProvider
+@implementation OWPointsConnection
 @synthesize dataType;
 
 - (id) init: (NSString *) urlString{

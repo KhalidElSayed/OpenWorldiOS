@@ -7,27 +7,37 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OWPayloadProviderDelegate.h"
-#import "OWPayloadProvider.h"
+#import "OWPayloadConnection.h"
 #import "OWPayloadView.h"
 #import "OWPayloadViewFactory.h"
+#import "OWAddPayloadViewController.h"
+#import "OWAnnotation.h"
+
 @interface OWPointDetailViewController : UIViewController <OWConnectionDelegate>{
     
-    OWPayloadProvider *payloadProvider;
+    OWPayloadConnection *payloadConnection;
     
     IBOutlet OWPayloadView *payloadView;
     
     IBOutlet UIButton *dismissButton;
     int payloadType;
     
+    OWAddPayloadViewController *addPayloadViewController;
+    
+    OWAnnotation *currentAnnotation;
+    
+    
 }
 
-@property (nonatomic, retain) OWPayloadProvider *payloadProvider;
+@property (nonatomic, retain) OWPayloadConnection *payloadConnection;
 @property (nonatomic, retain) OWPayloadView *payloadView;
 @property (nonatomic, retain) IBOutlet UIButton *dismissButton;
+@property (nonatomic, retain) OWAddPayloadViewController *addPayloadViewController;
+@property (nonatomic, retain) OWAnnotation *currentAnnotation;
 
-- (BOOL) getPayload: (NSString *) pointKey: (int) payloadIndex;
+- (BOOL) getPayload: (NSString *) pointKey: (NSString *) dataTypeKey: (int) payloadIndex;
 
 - (IBAction) dismissView;
+- (IBAction) addPayload;
 - (void) switchPayload;
 @end

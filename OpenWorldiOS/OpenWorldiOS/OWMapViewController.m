@@ -9,12 +9,13 @@
 #import "OWMapViewController.h"
 #import "OWAnnotation.h"
 #import "OWAppDelegate.h"
+#import "OWDataType.h"
 @interface OWMapViewController ()
 
 @end
 
 @implementation OWMapViewController
-@synthesize mapView,detailViewController;
+@synthesize addPointViewController,mapView,detailViewController;
 
  
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -24,6 +25,16 @@
         // Custom initialization
     }
     return self;
+}
+- (IBAction) addPointAction {
+
+    if (addPointViewController == nil) {
+        [self setAddPointViewController:[[OWAddPointViewController alloc] initWithNibName:@"OWAddPointViewController" bundle:nil]];
+    }
+    [addPointViewController setUserLocation:[[mapView userLocation] location]];
+    OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
+    [addPointViewController setDataKeyString:[[ [mainDelegate pointsConnection] dataType] key]];
+    [self presentModalViewController:addPointViewController animated:YES];
 }
 - (IBAction) payloadTypeButton{
     //[detailViewController switchPayload]; 
@@ -38,6 +49,7 @@
     [super viewDidLoad];
     
     [self setDetailViewController:[[OWPointDetailViewController alloc] initWithNibName:@"DataDetailView" bundle:nil]];
+    [mapView setShowsUserLocation:YES];
 	// Do any additional setup after loading the view.
 }
 
@@ -53,7 +65,7 @@
 }
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
     OWAppDelegate *mainDelegate  = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
-    [[mainDelegate dataProvider] startConnection:[mapView region]]; 
+    [[mainDelegate pointsConnection] startConnection:[mapView region]]; 
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
@@ -61,7 +73,8 @@
     
     OWAnnotation *annotation = (OWAnnotation *) [view annotation];
     [self presentModalViewController:detailViewController animated:YES];
-    [detailViewController getPayload:[annotation key] :0];
+    [detailViewController setCurrentAnnotation:annotation];
+    [detailViewController getPayload:[annotation key]: [annotation dataTypeKey] :0];
 	
 	/*
 	
@@ -164,7 +177,7 @@
             NSString *title = [pointDictionary valueForKey:@"title"];
             NSString *description = [pointDictionary valueForKey:@"description"];
             NSString *created = [pointDictionary valueForKey:@"created"];
-            NSString *catstring = [pointDictionary valueForKey:@"cat"];
+            NSString *datatypestring = [pointDictionary valueForKey:@"datatypekey"];
             NSString *keystring = [pointDictionary valueForKey:@"key"];
             NSDateFormatter *df = [[NSDateFormatter alloc] init];
             [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -174,7 +187,7 @@
             NSDate *date = [df dateFromString:created];
 
             OWAnnotation    *annotation  = [[OWAnnotation alloc] initWithCoordinate:tmpPoint :title :description : created:date];
-            [annotation setCategory:[catstring intValue]];
+            [annotation setDataTypeKey:datatypestring];
             [annotation setKey:keystring];
             [[self mapView] addAnnotation:annotation];
 

@@ -11,10 +11,11 @@
  @implementation OWAppDelegate
 
 @synthesize window;
-@synthesize dataTypeSelectViewController,tabBarController,dataProvider;
+@synthesize dataTypeSelectViewController,tabBarController,pointsConnection;
 
-- (void) finishedUpdatingPoints: (NSArray *) array{
-    if (array) {
+- (void) finishedUpdatingPoints: (NSObject *) arrayOrDictionary{
+    if (arrayOrDictionary) {
+        NSArray *array = (NSArray *) arrayOrDictionary;
         [(OWMapViewController *) [[tabBarController viewControllers] objectAtIndex:0] updateMapView:array];
     }
 }
@@ -27,7 +28,7 @@
    // return MKCoordinateRegionMake(CLLocationCoordinate2DMake(0, 0), MKCoordinateSpanMake(0, 0));
 }
 - (void) updatePoints{
-    [dataProvider startConnection:[self getUserRegion]];
+    [pointsConnection startConnection:[self getUserRegion]];
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -40,9 +41,9 @@
     
     [self.window makeKeyAndVisible];
     
-    [self setDataProvider:[[OWPointsProvider alloc] init:@"http://openworldserver.appspot.com"]];
-    [dataProvider setDelegate:self];
-    [dataProvider startConnection:[self getUserRegion]];
+    [self setPointsConnection:[[OWPointsConnection alloc] init:@"http://openworldserver.appspot.com"]];
+    [pointsConnection setDelegate:self];
+    [pointsConnection startConnection:[self getUserRegion]];
     
     
     [self setDataTypeSelectViewController:[[OWDataTypeSelectViewController alloc] initWithNibName:@"OWDataTypeSelectViewController" bundle:nil]];

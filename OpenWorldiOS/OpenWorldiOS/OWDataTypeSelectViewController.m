@@ -15,13 +15,13 @@
 
 @implementation OWDataTypeSelectViewController
 
-@synthesize selectedDataType,availableDataTypes,dataTypeProvider;
+@synthesize selectedDataType,availableDataTypes,dataTypeConnection;
 
-- (void) finishedUpdatingPoints :(NSArray *) array{
+- (void) finishedUpdatingPoints :(NSObject *) arrayOrDictionary{
     
     //clear current list  + init list if first one
     [self setAvailableDataTypes:[[NSMutableArray alloc] init]];
-    
+    NSArray *array = (NSArray *) arrayOrDictionary;
     for (int i = 0; i < [array count]; i++){
         NSDictionary *dataTypeDictionary = [array objectAtIndex:i];
         if(dataTypeDictionary){
@@ -55,9 +55,9 @@
 {
     [super viewDidLoad];
     
-    [self setDataTypeProvider:[[OWDataTypeProvider alloc] init:@"http://openworldserver.appspot.com/getDataTypes"]];
-    [dataTypeProvider setDelegate:self];
-    [dataTypeProvider startConnection];
+    [self setDataTypeConnection:[[OWDataTypeConnection alloc] init:@"http://openworldserver.appspot.com/getDataTypes"]];
+    [dataTypeConnection setDelegate:self];
+    [dataTypeConnection startConnection];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -69,7 +69,7 @@
 }
 
 - (void) updateDataTypes{
-    [dataTypeProvider startConnection];
+    [dataTypeConnection startConnection];
 }
 - (void)viewDidUnload
 {
@@ -167,7 +167,7 @@
     
     OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
     
-    [[mainDelegate dataProvider] setDataType:[availableDataTypes objectAtIndex:indexPath.row]];
+    [[mainDelegate pointsConnection] setDataType:[availableDataTypes objectAtIndex:indexPath.row]];
     [self dismissModalViewControllerAnimated:YES];
     
     [mainDelegate updatePoints];

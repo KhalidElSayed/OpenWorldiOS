@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OWDataTypeProviderDelegate.h"
 #import "OWConnection.h"
-@interface OWDataTypeProvider : OWConnection
+@interface OWDataTypeConnection : OWConnection
 {
 
 }

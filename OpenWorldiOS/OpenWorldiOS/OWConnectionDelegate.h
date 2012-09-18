@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @protocol OWConnectionDelegate <NSObject>
-- (void) finishedUpdatingPoints :(NSArray *) array;
+- (void) finishedUpdatingPoints :(NSObject *) arrayOrDictionary;
 - (void) connectionFailed: (NSError *) error;
 @end

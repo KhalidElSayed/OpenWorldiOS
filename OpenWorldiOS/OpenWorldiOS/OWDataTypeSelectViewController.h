@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OWDataTypeProviderDelegate.h"
-#import "OWDataTypeProvider.h"
+#import "OWDataTypeConnection.h"
 #import "OWDataType.h"
 @interface OWDataTypeSelectViewController : UITableViewController <OWConnectionDelegate>{
 
-    OWDataTypeProvider *dataTypeProvider;
+    OWDataTypeConnection *dataTypeConnection;
     NSMutableArray *availableDataTypes;
     OWDataType *selectedDataType;
     
@@ -20,7 +19,7 @@
 }
 - (void) updateDataTypes;
 - (IBAction)dismiss;
-@property (nonatomic, retain) OWDataTypeProvider *dataTypeProvider;
+@property (nonatomic, retain) OWDataTypeConnection *dataTypeConnection;
 @property (nonatomic, retain) NSMutableArray *availableDataTypes;
 @property (nonatomic, retain) OWDataType *selectedDataType;
 @end

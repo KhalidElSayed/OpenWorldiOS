@@ -14,11 +14,15 @@
 
 @implementation OWAddPointViewController
 
+@synthesize addPointsConnection,titleTextField,subtitleTextField,dataKeyString,creatorString,userLocation;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [self setAddPointsConnection:[[OWAddPointsConnection alloc] init:@"http://openworldserver.appspot.com/addPoint"]];
+        [addPointsConnection setDelegate:self];
     }
     return self;
 }
@@ -39,6 +43,29 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+ 
+    [textField resignFirstResponder];
+     return YES;
+}
+- (IBAction) cancelAction{
+    [self dismissModalViewControllerAnimated:YES];
+}
+- (IBAction) addAction{
+    [addPointsConnection startConnection:userLocation.coordinate.latitude :userLocation.coordinate.longitude :dataKeyString :creatorString :titleTextField.text :subtitleTextField.text];
+
+}
+
+- (void) finishedUpdatingPoints :(NSObject *) arrayOrDictionary{
+    NSDictionary *doneDictionary = (NSDictionary *) arrayOrDictionary;
+    NSString *pointKey = [doneDictionary objectForKey:@"pointkey"];
+    [self dismissModalViewControllerAnimated:YES];
+    //TODO: add to Users's created points list
+    
+}
+- (void) connectionFailed: (NSError *) error{
+
 }
 
 @end

@@ -13,7 +13,7 @@
 @end
 
 @implementation OWPointDetailViewController
-@synthesize payloadProvider,payloadView,dismissButton;
+@synthesize currentAnnotation,payloadConnection,payloadView,dismissButton,addPayloadViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,8 +21,8 @@
     if (self) {
         // Custom initialization
         
-        payloadProvider = [[OWPayloadProvider alloc] init:@"http://openworldserver.appspot.com/payload"];
-        [payloadProvider setDelegate:self];
+        payloadConnection = [[OWPayloadConnection alloc] init:@"http://openworldserver.appspot.com/payload"];
+        [payloadConnection setDelegate:self];
         payloadType = 0;
     }
     return self;
@@ -46,6 +46,14 @@
     
 }
  */
+- (IBAction) addPayload{
+    if (addPayloadViewController == nil) {
+        [self setAddPayloadViewController:[[OWAddPayloadViewController alloc] initWithNibName:@"OWAddPayloadViewController" bundle:nil]];
+    }
+    
+    [self presentModalViewController:addPayloadViewController animated:YES];
+    [addPayloadViewController setPointKey:currentAnnotation.key];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -70,9 +78,9 @@
 - (void) connectionFailed: (NSError *) error{
     
 }
-- (void) finishedUpdatingPoints: (NSArray *) array{
+- (void) finishedUpdatingPoints: (NSObject *) arrayOrDictionary{
     
-    NSDictionary *payloadDictionary = [array objectAtIndex:0];
+    NSDictionary *payloadDictionary = (NSDictionary *) arrayOrDictionary;
     
     NSString *payload = [payloadDictionary objectForKey:@"payload"];
     OWPayloadType type = [[payloadDictionary objectForKey:@"payloadType"] intValue];
@@ -94,9 +102,13 @@
 }
 
 
-- (BOOL) getPayload: (NSString *) pointKey: (int) payloadIndex{
+- (BOOL) getPayload: (NSString *) pointKey: (NSString *) dataTypeKey: (int) payloadIndex{
 
-    return [payloadProvider startConnection:pointKey :@"" :payloadIndex];
+    return [payloadConnection startConnection:pointKey :dataTypeKey :payloadIndex];
+}
+
+- (void) setupDetailScreen: (OWAnnotation *) annotation{
+    
 }
 
 @end

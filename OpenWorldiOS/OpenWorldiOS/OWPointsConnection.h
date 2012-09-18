@@ -10,12 +10,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h> 
-#import "OWPointsProviderDelegate.h"
 #import "OWDataType.h"
 #import "OWConnection.h"
 #define kMaxResults   199    /**< Maximum number of results*/
 
-@interface OWPointsProvider : OWConnection
+@interface OWPointsConnection : OWConnection
 {
 
     	CLLocationCoordinate2D locations[kMaxResults]; 
