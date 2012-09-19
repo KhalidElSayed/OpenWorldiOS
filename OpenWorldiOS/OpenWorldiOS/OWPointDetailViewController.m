@@ -13,7 +13,7 @@
 @end
 
 @implementation OWPointDetailViewController
-@synthesize currentAnnotation,payloadConnection,payloadView,dismissButton,addPayloadViewController;
+@synthesize activityView,currentAnnotation,payloadConnection,payloadView,dismissButton,addPayloadViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -77,6 +77,7 @@
 
 - (void) connectionFailed: (NSError *) error{
     
+    [activityView stopAnimating];
 }
 - (void) finishedUpdatingPoints: (NSObject *) arrayOrDictionary{
     
@@ -84,7 +85,8 @@
     
     NSString *payload = [payloadDictionary objectForKey:@"payload"];
     OWPayloadType type = [[payloadDictionary objectForKey:@"payloadType"] intValue];
-	
+	numberOfPayloads = [[payloadDictionary objectForKey:@"payloadCount"] intValue];
+    
     if (payload == nil) {
         //TODO show alert error message
     }
@@ -96,19 +98,33 @@
         [payloadView loadPayloadData:payload];
         [[self view] addSubview:payloadView];
         
+        
+        [[self view] bringSubviewToFront:addPayloadButton];
+        [[self view] bringSubviewToFront:nextPayloadButton];
         [[self view] bringSubviewToFront:dismissButton];
+        [[self view] bringSubviewToFront:activityView];
     }
+    
+    [activityView stopAnimating];
     
 }
 
 
 - (BOOL) getPayload: (NSString *) pointKey: (NSString *) dataTypeKey: (int) payloadIndex{
 
+    [activityView startAnimating];
     return [payloadConnection startConnection:pointKey :dataTypeKey :payloadIndex];
 }
 
 - (void) setupDetailScreen: (OWAnnotation *) annotation{
     
+}
+- (IBAction) nextAction{
+    curPayloadIndex++;
+    if (curPayloadIndex >= numberOfPayloads) {
+        curPayloadIndex = 0;
+    }
+    [self getPayload:[currentAnnotation key] :[currentAnnotation dataTypeKey] :curPayloadIndex];
 }
 
 @end

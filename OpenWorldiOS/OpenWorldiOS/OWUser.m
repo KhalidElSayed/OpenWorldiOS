@@ -9,7 +9,7 @@
 #import "OWUser.h"
 
 @implementation OWUser
-@synthesize userKey,userName,createdPoints,favoritePoints;
+@synthesize emailAddress,userKey,userName,createdPoints,favoritePoints;
 
 - (id) init{
     if(self = [super init]){

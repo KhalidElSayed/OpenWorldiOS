@@ -106,7 +106,7 @@
     NSString * responseString =  [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
 	
-    NSLog(responseString);
+ //   NSLog(responseString);
     //quick check for invalid response
 
 

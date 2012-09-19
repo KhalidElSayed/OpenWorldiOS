@@ -25,6 +25,10 @@
 		27413CD21607115F0075CDCC /* OWAddPointsConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 27413CD11607115F0075CDCC /* OWAddPointsConnection.m */; };
 		27413CD616071C180075CDCC /* OWUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27413CD516071C170075CDCC /* OWUser.m */; };
 		27413CD91607B2A90075CDCC /* OWAddPayloadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 27413CD81607B2A80075CDCC /* OWAddPayloadConnection.m */; };
+		279EF0C2160999D800718030 /* OWUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EF0C0160999D800718030 /* OWUserLoginViewController.m */; };
+		279EF0C3160999D800718030 /* OWUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279EF0C1160999D800718030 /* OWUserLoginViewController.xib */; };
+		279EF0C716099B0C00718030 /* OWNewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279EF0C516099B0C00718030 /* OWNewUserViewController.m */; };
+		279EF0C816099B0C00718030 /* OWNewUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279EF0C616099B0C00718030 /* OWNewUserViewController.xib */; };
 		27BB3B2B15EFE3E60092A07A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2A15EFE3E60092A07A /* UIKit.framework */; };
 		27BB3B2D15EFE3E60092A07A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2C15EFE3E60092A07A /* Foundation.framework */; };
 		27BB3B2F15EFE3E60092A07A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BB3B2E15EFE3E60092A07A /* CoreGraphics.framework */; };
@@ -92,6 +96,12 @@
 		27413CD516071C170075CDCC /* OWUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWUser.m; sourceTree = "<group>"; };
 		27413CD71607B2A80075CDCC /* OWAddPayloadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWAddPayloadConnection.h; sourceTree = "<group>"; };
 		27413CD81607B2A80075CDCC /* OWAddPayloadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWAddPayloadConnection.m; sourceTree = "<group>"; };
+		279EF0BF160999D800718030 /* OWUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWUserLoginViewController.h; sourceTree = "<group>"; };
+		279EF0C0160999D800718030 /* OWUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWUserLoginViewController.m; sourceTree = "<group>"; };
+		279EF0C1160999D800718030 /* OWUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OWUserLoginViewController.xib; sourceTree = "<group>"; };
+		279EF0C416099B0C00718030 /* OWNewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWNewUserViewController.h; sourceTree = "<group>"; };
+		279EF0C516099B0C00718030 /* OWNewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWNewUserViewController.m; sourceTree = "<group>"; };
+		279EF0C616099B0C00718030 /* OWNewUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OWNewUserViewController.xib; sourceTree = "<group>"; };
 		27BB3B2615EFE3E60092A07A /* OpenWorldiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWorldiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BB3B2A15EFE3E60092A07A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27BB3B2C15EFE3E60092A07A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -213,6 +223,19 @@
 			name = "Misc OW Classes";
 			sourceTree = "<group>";
 		};
+		279EF0C91609A02300718030 /* User Login/Creat Classes */ = {
+			isa = PBXGroup;
+			children = (
+				279EF0BF160999D800718030 /* OWUserLoginViewController.h */,
+				279EF0C0160999D800718030 /* OWUserLoginViewController.m */,
+				279EF0C1160999D800718030 /* OWUserLoginViewController.xib */,
+				279EF0C416099B0C00718030 /* OWNewUserViewController.h */,
+				279EF0C516099B0C00718030 /* OWNewUserViewController.m */,
+				279EF0C616099B0C00718030 /* OWNewUserViewController.xib */,
+			);
+			name = "User Login/Creat Classes";
+			sourceTree = "<group>";
+		};
 		27BB3B1B15EFE3E60092A07A = {
 			isa = PBXGroup;
 			children = (
@@ -256,14 +279,13 @@
 				27413CA9160312780075CDCC /* DataType Classes */,
 				27413CD3160712020075CDCC /* AddPoint Classes */,
 				27413CDA1607B3160075CDCC /* AddPayload Classes */,
-				27D562DB15F6926600454254 /* OWPointDetailViewController.h */,
-				2718C27D15F1EBCE00B4BBCC /* OWPointDetailViewController.m */,
 				27BB3B9115F0A0530092A07A /* OWMapViewController.h */,
 				27BB3B9215F0A0530092A07A /* OWMapViewController.m */,
 				27BB3B9415F0A07C0092A07A /* OWARViewController.h */,
 				27BB3B9515F0A07C0092A07A /* OWARViewController.m */,
 				27BB3B3915EFE3E60092A07A /* OWAppDelegate.h */,
 				27BB3B3A15EFE3E60092A07A /* OWAppDelegate.m */,
+				279EF0C91609A02300718030 /* User Login/Creat Classes */,
 				27BB3B3115EFE3E60092A07A /* Supporting Files */,
 			);
 			path = OpenWorldiOS;
@@ -274,7 +296,6 @@
 			children = (
 				27BB3B3215EFE3E60092A07A /* OpenWorldiOS-Info.plist */,
 				27BB3B8F15F099800092A07A /* MainWindow.xib */,
-				2718C28015F1EDA800B4BBCC /* DataDetailView.xib */,
 				27BB3B3315EFE3E60092A07A /* InfoPlist.strings */,
 				27BB3B3615EFE3E60092A07A /* main.m */,
 				27BB3B3815EFE3E60092A07A /* OpenWorldiOS-Prefix.pch */,
@@ -311,6 +332,9 @@
 		27D562D815F6894200454254 /* Payload Classes */ = {
 			isa = PBXGroup;
 			children = (
+				27D562DB15F6926600454254 /* OWPointDetailViewController.h */,
+				2718C27D15F1EBCE00B4BBCC /* OWPointDetailViewController.m */,
+				2718C28015F1EDA800B4BBCC /* DataDetailView.xib */,
 				27D562DA15F6898F00454254 /* Payload Views */,
 				2718C28815F54F4200B4BBCC /* OWPayloadConnection.h */,
 				2718C28915F54F4200B4BBCC /* OWPayloadConnection.m */,
@@ -421,6 +445,8 @@
 				27413CB9160314370075CDCC /* OWDataTypeSelectViewController.xib in Resources */,
 				27413CC61606542D0075CDCC /* OWAddPointViewController.xib in Resources */,
 				27413CCB160655220075CDCC /* OWAddPayloadViewController.xib in Resources */,
+				279EF0C3160999D800718030 /* OWUserLoginViewController.xib in Resources */,
+				279EF0C816099B0C00718030 /* OWNewUserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +503,8 @@
 				27413CD21607115F0075CDCC /* OWAddPointsConnection.m in Sources */,
 				27413CD616071C180075CDCC /* OWUser.m in Sources */,
 				27413CD91607B2A90075CDCC /* OWAddPayloadConnection.m in Sources */,
+				279EF0C2160999D800718030 /* OWUserLoginViewController.m in Sources */,
+				279EF0C716099B0C00718030 /* OWNewUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

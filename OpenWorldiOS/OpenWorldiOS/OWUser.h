@@ -11,6 +11,7 @@
 @interface OWUser : NSObject{
     NSString *userName;
     NSString *userKey;
+    NSString *emailAddress;
     NSMutableArray *createdPoints;
     
     NSMutableArray *favoritePoints;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain)    NSString *userName;
 @property (nonatomic, retain)   NSString *userKey;
 @property (nonatomic, retain)   NSMutableArray *createdPoints;
+@property (nonatomic, retain)  NSString *emailAddress;
 
 @property (nonatomic, retain) NSMutableArray *favoritePoints;
 

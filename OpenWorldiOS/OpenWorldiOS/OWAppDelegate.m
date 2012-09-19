@@ -11,7 +11,7 @@
  @implementation OWAppDelegate
 
 @synthesize window;
-@synthesize dataTypeSelectViewController,tabBarController,pointsConnection;
+@synthesize currentUser,dataTypeSelectViewController,tabBarController,pointsConnection;
 
 - (void) finishedUpdatingPoints: (NSObject *) arrayOrDictionary{
     if (arrayOrDictionary) {

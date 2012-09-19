@@ -80,7 +80,7 @@ static char decodingTable[128];
 
 
 - (NSData*) decode:(NSString*) string {
-    NSLog(string);
+ //   NSLog(string);
 	return [self decode:[string cStringUsingEncoding:NSASCIIStringEncoding] length:string.length];
 }
 @end

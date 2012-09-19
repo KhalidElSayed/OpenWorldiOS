@@ -20,13 +20,18 @@
     IBOutlet OWPayloadView *payloadView;
     
     IBOutlet UIButton *dismissButton;
+    IBOutlet UIButton *addPayloadButton;
+    IBOutlet UIButton *nextPayloadButton;
     int payloadType;
     
     OWAddPayloadViewController *addPayloadViewController;
     
     OWAnnotation *currentAnnotation;
     
+    int numberOfPayloads;
+    int curPayloadIndex;
     
+    IBOutlet UIActivityIndicatorView *activityView;
 }
 
 @property (nonatomic, retain) OWPayloadConnection *payloadConnection;
@@ -34,10 +39,12 @@
 @property (nonatomic, retain) IBOutlet UIButton *dismissButton;
 @property (nonatomic, retain) OWAddPayloadViewController *addPayloadViewController;
 @property (nonatomic, retain) OWAnnotation *currentAnnotation;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityView;
 
 - (BOOL) getPayload: (NSString *) pointKey: (NSString *) dataTypeKey: (int) payloadIndex;
 
 - (IBAction) dismissView;
 - (IBAction) addPayload;
 - (void) switchPayload;
+- (IBAction) nextAction;
 @end
