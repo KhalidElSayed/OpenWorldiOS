@@ -7,7 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OWCreateUserViewController.h"
+#import "OWUserLoginConnection.h"
+ 
+@interface OWUserLoginViewController : UIViewController <OWConnectionDelegate, UITextFieldDelegate>{
+    IBOutlet UITextField *userNameTextField;
+    IBOutlet UITextField *userPasswordTextField;
+    
+    OWUserLoginConnection *userLoginConnection;
+    OWCreateUserViewController *createUserViewController;
+}
+@property (nonatomic, retain) IBOutlet UITextField *userNameTextField;
+@property (nonatomic, retain) IBOutlet UITextField *userPasswordTextField;
 
-@interface OWUserLoginViewController : UIViewController
+@property (nonatomic, retain) OWUserLoginConnection *userLoginConnection;
+@property (nonatomic, retain) OWCreateUserViewController *createUserViewController;
 
+- (IBAction) createAction;
+- (IBAction) loginAction;
 @end

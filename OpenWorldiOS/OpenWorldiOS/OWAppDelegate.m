@@ -11,8 +11,15 @@
  @implementation OWAppDelegate
 
 @synthesize window;
-@synthesize currentUser,dataTypeSelectViewController,tabBarController,pointsConnection;
-
+@synthesize currentUser,dataTypeSelectViewController,tabBarController,pointsConnection,userLoginViewController;
+- (void) changeCurrentUser: (NSString *) userName: (NSString * ) userEmail: (NSString *) userKey{
+    
+    [self setCurrentUser:[[OWUser alloc] init]];
+    currentUser.emailAddress = userEmail;
+    currentUser.userName = userName;
+    currentUser.userKey = userKey;
+    
+}
 - (void) finishedUpdatingPoints: (NSObject *) arrayOrDictionary{
     if (arrayOrDictionary) {
         NSArray *array = (NSArray *) arrayOrDictionary;
@@ -49,9 +56,18 @@
     [self setDataTypeSelectViewController:[[OWDataTypeSelectViewController alloc] initWithNibName:@"OWDataTypeSelectViewController" bundle:nil]];
     [dataTypeSelectViewController updateDataTypes];
     
+    [self loginUser];
+    
+    
     return YES;
 }
 
+- (void) loginUser{
+    if (userLoginViewController == nil) {
+        [self setUserLoginViewController:[[OWUserLoginViewController alloc] initWithNibName:@"OWUserLoginViewController" bundle:nil]];
+    }
+    [[tabBarController selectedViewController] presentModalViewController:userLoginViewController animated:YES];
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

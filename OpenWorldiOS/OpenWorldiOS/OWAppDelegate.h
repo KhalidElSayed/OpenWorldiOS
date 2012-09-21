@@ -12,6 +12,7 @@
 #import "OWPointsConnection.h"
 #import "OWDataTypeSelectViewController.h"
 #import "OWUser.h"
+#import "OWUserLoginViewController.h"
 
 @interface OWAppDelegate : UIResponder <UIApplicationDelegate, OWConnectionDelegate>{
     UIWindow *window;
@@ -19,6 +20,8 @@
     OWPointsConnection *pointsConnection;
     OWDataTypeSelectViewController *dataTypeSelectViewController;
     OWUser *currentUser;
+    
+    OWUserLoginViewController *userLoginViewController;
 }
 typedef enum {
     OWPayloadTypeText,
@@ -30,6 +33,10 @@ typedef enum {
 @property (nonatomic, retain) OWPointsConnection *pointsConnection;
 @property (nonatomic, retain) OWDataTypeSelectViewController *dataTypeSelectViewController;
 @property (nonatomic, retain) OWUser *currentUser;
+@property (nonatomic, retain) OWUserLoginViewController *userLoginViewController;
+
 - (MKCoordinateRegion) getUserRegion;
 - (void) updatePoints;
+
+- (void) changeCurrentUser: (NSString *) userName: (NSString * ) userEmail: (NSString *) userKey;
 @end

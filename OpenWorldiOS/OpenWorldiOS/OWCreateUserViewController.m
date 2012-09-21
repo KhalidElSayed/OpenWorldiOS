@@ -1,22 +1,31 @@
 //
-//  OWUserLoginViewController.m
+//  OWNewUserViewController.m
 //  OpenWorldiOS
 //
 //  Created by Edward Williams on 9/19/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "OWUserLoginViewController.h"
+#import "OWCreateUserViewController.h"
 #import "OWAppDelegate.h"
-@interface OWUserLoginViewController ()
+@interface OWCreateUserViewController ()
 
 @end
 
-@implementation OWUserLoginViewController
-@synthesize userNameTextField,userPasswordTextField,createUserViewController,userLoginConnection;
+@implementation OWCreateUserViewController
+@synthesize createUserConnection,emailTextField,nameTextField,passwordTextField;
+
+- (BOOL) textFieldShouldReturn:(UITextField*)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+- (IBAction) registerAction{
+    [createUserConnection startConnection:[nameTextField text] :[emailTextField text]];
+}
+
 - (void) connectionFailed: (NSError *) error{
-    // [self dismissModalViewControllerAnimated:YES];
-    
+   // [self dismissModalViewControllerAnimated:YES];
+
 }
 - (void) finishedUpdatingPoints: (NSObject *) arrayOrDictionary{
     NSDictionary *doneDictionary = (NSDictionary *) arrayOrDictionary;
@@ -27,25 +36,10 @@
     OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
     
     [mainDelegate changeCurrentUser:userName :userEmail :userKey];
-    
+
+    [self dismissModalViewControllerAnimated:NO];
     [self dismissModalViewControllerAnimated:YES];
-    
 }
-- (BOOL) textFieldShouldReturn:(UITextField*)textField {
-    [textField resignFirstResponder];
-    return YES;
-}
-- (IBAction) createAction{
-    if (createUserViewController == nil) {
-        [self setCreateUserViewController:[[OWCreateUserViewController alloc] initWithNibName:@"OWCreateUserViewController" bundle:nil]];
-    }
-    [self presentModalViewController:createUserViewController animated:YES];
-}
-- (IBAction) loginAction{
-
-    [userLoginConnection startConnection:[userNameTextField text] :[userPasswordTextField text]];
-}
-
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,9 +48,8 @@
     if (self) {
         // Custom initialization
         
-        [self setUserLoginConnection:[[OWUserLoginConnection alloc] init:@"http://openworldserver.appspot.com/userLogin"]];
-        [userLoginConnection setDelegate:self];
- 
+        [self setCreateUserConnection:[[OWCreateUserConnection alloc] init:@"http://openworldserver.appspot.com/addUser"]];
+        [createUserConnection setDelegate:self];
     }
     return self;
 }
@@ -64,6 +57,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+ 
+    
+
+    
     // Do any additional setup after loading the view from its nib.
 }
 
