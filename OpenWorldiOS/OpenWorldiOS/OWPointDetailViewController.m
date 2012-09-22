@@ -7,7 +7,7 @@
 //
 
 #import "OWPointDetailViewController.h"
-
+#import "OWAppDelegate.h"
 @interface OWPointDetailViewController ()
 
 @end
@@ -50,9 +50,10 @@
     if (addPayloadViewController == nil) {
         [self setAddPayloadViewController:[[OWAddPayloadViewController alloc] initWithNibName:@"OWAddPayloadViewController" bundle:nil]];
     }
-    
+    OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
     [self presentModalViewController:addPayloadViewController animated:YES];
     [addPayloadViewController setPointKey:currentAnnotation.key];
+    [addPayloadViewController setCreatorKey:[[mainDelegate currentUser] userKey]];
 }
 - (void)viewDidLoad
 {

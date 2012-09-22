@@ -11,7 +11,11 @@
 @interface OWDataType : NSObject{
     NSString *key;
     NSString *name;
+    
+    NSString *externalServer;
 }
 @property (nonatomic, retain) NSString *key;
-@property (nonatomic, retain)NSString *name;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *externalServer;  //optional
+
 @end

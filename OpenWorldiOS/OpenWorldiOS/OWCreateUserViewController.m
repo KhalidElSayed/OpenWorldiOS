@@ -32,15 +32,28 @@
     NSString *userKey = [doneDictionary objectForKey:@"key"];
     NSString *userName = [doneDictionary objectForKey:@"name"];
     NSString *userEmail = [doneDictionary objectForKey:@"email"];
+    NSString *errorCode = [doneDictionary objectForKey:@"error"];
     
-    OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
-    
-    [mainDelegate changeCurrentUser:userName :userEmail :userKey];
+    if (errorCode == nil) {
+        OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
+        
+        [mainDelegate changeCurrentUser:userName :userEmail :userKey];
+        
+        
+        [self dismissModalViewControllerAnimated:NO];
+        [[mainDelegate userLoginViewController] dismissModalViewControllerAnimated:YES];
+    }
+    else{
+        [self displayErrorMessage];
+    }
 
-    [self dismissModalViewControllerAnimated:NO];
-    [self dismissModalViewControllerAnimated:YES];
 }
 
+- (void) displayErrorMessage{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Creating New User" message:@"A user with this name already exists" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

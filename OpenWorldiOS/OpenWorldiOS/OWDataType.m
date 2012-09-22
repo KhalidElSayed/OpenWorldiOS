@@ -9,6 +9,6 @@
 #import "OWDataType.h"
 
 @implementation OWDataType
-@synthesize name,key;
+@synthesize name,key,externalServer;
 
 @end

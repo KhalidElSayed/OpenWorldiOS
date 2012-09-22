@@ -27,9 +27,11 @@
         if(dataTypeDictionary){
             NSString *dataTypeName = [dataTypeDictionary valueForKey:@"dataName"];
             NSString *dataTypeKey = [dataTypeDictionary valueForKey:@"key"];
+            NSString *dataTypeExternalServer = [dataTypeDictionary valueForKey:@"externalServer"];
             OWDataType *newDataType = [[OWDataType alloc] init];
             [newDataType setKey:dataTypeKey];
             [newDataType setName:dataTypeName];
+            [newDataType setExternalServer:dataTypeExternalServer];
             [availableDataTypes addObject:newDataType];
             
         }
@@ -168,6 +170,7 @@
     OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
     
     [[mainDelegate pointsConnection] setDataType:[availableDataTypes objectAtIndex:indexPath.row]];
+    
     [self dismissModalViewControllerAnimated:YES];
     
     [mainDelegate updatePoints];

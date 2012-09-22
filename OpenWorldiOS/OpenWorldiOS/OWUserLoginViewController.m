@@ -23,14 +23,29 @@
     NSString *userKey = [doneDictionary objectForKey:@"key"];
     NSString *userName = [doneDictionary objectForKey:@"name"];
     NSString *userEmail = [doneDictionary objectForKey:@"email"];
+    NSString *errorCode = [doneDictionary objectForKey:@"error"];
     
-    OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
-    
-    [mainDelegate changeCurrentUser:userName :userEmail :userKey];
-    
-    [self dismissModalViewControllerAnimated:YES];
+    if (errorCode == nil) {
+        OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
+        
+        [mainDelegate changeCurrentUser:userName :userEmail :userKey];
+        
+        
+        [self dismissModalViewControllerAnimated:NO];
+        [[mainDelegate userLoginViewController] dismissModalViewControllerAnimated:YES];
+    }
+    else{
+        [self displayErrorMessage];
+    }
     
 }
+
+- (void) displayErrorMessage{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Loging In" message:@"Your user name cannot be found. Please create a new user." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+    
+}
+
 - (BOOL) textFieldShouldReturn:(UITextField*)textField {
     [textField resignFirstResponder];
     return YES;
@@ -40,6 +55,7 @@
         [self setCreateUserViewController:[[OWCreateUserViewController alloc] initWithNibName:@"OWCreateUserViewController" bundle:nil]];
     }
     [self presentModalViewController:createUserViewController animated:YES];
+ 
 }
 - (IBAction) loginAction{
 

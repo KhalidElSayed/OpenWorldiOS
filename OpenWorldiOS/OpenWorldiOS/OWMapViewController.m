@@ -34,6 +34,7 @@
     [addPointViewController setUserLocation:[[mapView userLocation] location]];
     OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
     [addPointViewController setDataKeyString:[[ [mainDelegate pointsConnection] dataType] key]];
+    [addPointViewController setCreatorString:[[mainDelegate currentUser] userKey]];
     [self presentModalViewController:addPointViewController animated:YES];
 }
 - (IBAction) payloadTypeButton{
