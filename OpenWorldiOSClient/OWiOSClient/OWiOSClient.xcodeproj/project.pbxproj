@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		274C5B0D16119A7E009B7DE3 /* libOpenWorld.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C5B0616119A40009B7DE3 /* libOpenWorld.a */; };
+		274C5B1016119ADE009B7DE3 /* OpenWorld.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 274C5B0A16119A40009B7DE3 /* OpenWorld.bundle */; };
+		274C5B1716119B4F009B7DE3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C5B1616119B4F009B7DE3 /* CoreLocation.framework */; };
+		274C5B3E16121905009B7DE3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274C5B3D16121905009B7DE3 /* MapKit.framework */; };
+		274C5B4E1612EB99009B7DE3 /* OWCustomMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 274C5B4D1612EB99009B7DE3 /* OWCustomMapViewController.m */; };
+		276689E716115AFE0044E2E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276689E616115AFE0044E2E5 /* UIKit.framework */; };
+		276689E916115AFE0044E2E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276689E816115AFE0044E2E5 /* Foundation.framework */; };
+		276689EB16115AFE0044E2E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276689EA16115AFE0044E2E5 /* CoreGraphics.framework */; };
+		276689F116115AFE0044E2E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 276689EF16115AFE0044E2E5 /* InfoPlist.strings */; };
+		276689F316115AFE0044E2E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 276689F216115AFE0044E2E5 /* main.m */; };
+		276689F716115AFE0044E2E5 /* OWClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 276689F616115AFE0044E2E5 /* OWClientAppDelegate.m */; };
+		276689F916115AFE0044E2E5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 276689F816115AFE0044E2E5 /* Default.png */; };
+		276689FB16115AFE0044E2E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 276689FA16115AFE0044E2E5 /* Default@2x.png */; };
+		276689FD16115AFE0044E2E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 276689FC16115AFE0044E2E5 /* Default-568h@2x.png */; };
+		27668A0516115AFE0044E2E5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27668A0416115AFE0044E2E5 /* SenTestingKit.framework */; };
+		27668A0616115AFE0044E2E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276689E616115AFE0044E2E5 /* UIKit.framework */; };
+		27668A0716115AFE0044E2E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276689E816115AFE0044E2E5 /* Foundation.framework */; };
+		27668A0F16115AFE0044E2E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27668A0D16115AFE0044E2E5 /* InfoPlist.strings */; };
+		27668A1216115AFE0044E2E5 /* OWiOSClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27668A1116115AFE0044E2E5 /* OWiOSClientTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		274C5B0516119A40009B7DE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 274C5AFB16119A40009B7DE3 /* OpenWorld.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 274C59FA16118721009B7DE3;
+			remoteInfo = OpenWorld;
+		};
+		274C5B0716119A40009B7DE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 274C5AFB16119A40009B7DE3 /* OpenWorld.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 274C5A0B16118721009B7DE3;
+			remoteInfo = OpenWorldTests;
+		};
+		274C5B0916119A40009B7DE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 274C5AFB16119A40009B7DE3 /* OpenWorld.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 274C5ADE16119413009B7DE3;
+			remoteInfo = OpenWorldResources;
+		};
+		274C5B0B16119A68009B7DE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 274C5AFB16119A40009B7DE3 /* OpenWorld.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 274C59F916118721009B7DE3;
+			remoteInfo = OpenWorld;
+		};
+		274C5B0E16119ABE009B7DE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 274C5AFB16119A40009B7DE3 /* OpenWorld.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 274C5ADD16119413009B7DE3;
+			remoteInfo = OpenWorldResources;
+		};
+		27668A0816115AFE0044E2E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 276689D916115AFE0044E2E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 276689E116115AFE0044E2E5;
+			remoteInfo = OWiOSClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		274C5AFB16119A40009B7DE3 /* OpenWorld.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OpenWorld.xcodeproj; path = ../../OWFrameworkiOS/OpenWorld/OpenWorld.xcodeproj; sourceTree = "<group>"; };
+		274C5B1616119B4F009B7DE3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		274C5B3D16121905009B7DE3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		274C5B4C1612EB99009B7DE3 /* OWCustomMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWCustomMapViewController.h; sourceTree = "<group>"; };
+		274C5B4D1612EB99009B7DE3 /* OWCustomMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWCustomMapViewController.m; sourceTree = "<group>"; };
+		276689E216115AFE0044E2E5 /* OWiOSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OWiOSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		276689E616115AFE0044E2E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		276689E816115AFE0044E2E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		276689EA16115AFE0044E2E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		276689EE16115AFE0044E2E5 /* OWiOSClient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OWiOSClient-Info.plist"; sourceTree = "<group>"; };
+		276689F016115AFE0044E2E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		276689F216115AFE0044E2E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		276689F416115AFE0044E2E5 /* OWiOSClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OWiOSClient-Prefix.pch"; sourceTree = "<group>"; };
+		276689F516115AFE0044E2E5 /* OWClientAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OWClientAppDelegate.h; sourceTree = "<group>"; };
+		276689F616115AFE0044E2E5 /* OWClientAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OWClientAppDelegate.m; sourceTree = "<group>"; };
+		276689F816115AFE0044E2E5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		276689FA16115AFE0044E2E5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		276689FC16115AFE0044E2E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		27668A0316115AFE0044E2E5 /* OWiOSClientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OWiOSClientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27668A0416115AFE0044E2E5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		27668A0C16115AFE0044E2E5 /* OWiOSClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OWiOSClientTests-Info.plist"; sourceTree = "<group>"; };
+		27668A0E16115AFE0044E2E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		27668A1016115AFE0044E2E5 /* OWiOSClientTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OWiOSClientTests.h; sourceTree = "<group>"; };
+		27668A1116115AFE0044E2E5 /* OWiOSClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OWiOSClientTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		276689DF16115AFE0044E2E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				274C5B3E16121905009B7DE3 /* MapKit.framework in Frameworks */,
+				274C5B1716119B4F009B7DE3 /* CoreLocation.framework in Frameworks */,
+				274C5B0D16119A7E009B7DE3 /* libOpenWorld.a in Frameworks */,
+				276689E716115AFE0044E2E5 /* UIKit.framework in Frameworks */,
+				276689E916115AFE0044E2E5 /* Foundation.framework in Frameworks */,
+				276689EB16115AFE0044E2E5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		276689FF16115AFE0044E2E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27668A0516115AFE0044E2E5 /* SenTestingKit.framework in Frameworks */,
+				27668A0616115AFE0044E2E5 /* UIKit.framework in Frameworks */,
+				27668A0716115AFE0044E2E5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		274C5AFC16119A40009B7DE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				274C5B0616119A40009B7DE3 /* libOpenWorld.a */,
+				274C5B0816119A40009B7DE3 /* OpenWorldTests.octest */,
+				274C5B0A16119A40009B7DE3 /* OpenWorld.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		276689D716115AFE0044E2E5 = {
+			isa = PBXGroup;
+			children = (
+				276689EC16115AFE0044E2E5 /* OWiOSClient */,
+				27668A0A16115AFE0044E2E5 /* OWiOSClientTests */,
+				276689E516115AFE0044E2E5 /* Frameworks */,
+				276689E316115AFE0044E2E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		276689E316115AFE0044E2E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				276689E216115AFE0044E2E5 /* OWiOSClient.app */,
+				27668A0316115AFE0044E2E5 /* OWiOSClientTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		276689E516115AFE0044E2E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				274C5B3D16121905009B7DE3 /* MapKit.framework */,
+				274C5B1616119B4F009B7DE3 /* CoreLocation.framework */,
+				274C5AFB16119A40009B7DE3 /* OpenWorld.xcodeproj */,
+				276689E616115AFE0044E2E5 /* UIKit.framework */,
+				276689E816115AFE0044E2E5 /* Foundation.framework */,
+				276689EA16115AFE0044E2E5 /* CoreGraphics.framework */,
+				27668A0416115AFE0044E2E5 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		276689EC16115AFE0044E2E5 /* OWiOSClient */ = {
+			isa = PBXGroup;
+			children = (
+				276689F516115AFE0044E2E5 /* OWClientAppDelegate.h */,
+				276689F616115AFE0044E2E5 /* OWClientAppDelegate.m */,
+				274C5B4C1612EB99009B7DE3 /* OWCustomMapViewController.h */,
+				274C5B4D1612EB99009B7DE3 /* OWCustomMapViewController.m */,
+				276689ED16115AFE0044E2E5 /* Supporting Files */,
+			);
+			path = OWiOSClient;
+			sourceTree = "<group>";
+		};
+		276689ED16115AFE0044E2E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				276689EE16115AFE0044E2E5 /* OWiOSClient-Info.plist */,
+				276689EF16115AFE0044E2E5 /* InfoPlist.strings */,
+				276689F216115AFE0044E2E5 /* main.m */,
+				276689F416115AFE0044E2E5 /* OWiOSClient-Prefix.pch */,
+				276689F816115AFE0044E2E5 /* Default.png */,
+				276689FA16115AFE0044E2E5 /* Default@2x.png */,
+				276689FC16115AFE0044E2E5 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27668A0A16115AFE0044E2E5 /* OWiOSClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				27668A1016115AFE0044E2E5 /* OWiOSClientTests.h */,
+				27668A1116115AFE0044E2E5 /* OWiOSClientTests.m */,
+				27668A0B16115AFE0044E2E5 /* Supporting Files */,
+			);
+			path = OWiOSClientTests;
+			sourceTree = "<group>";
+		};
+		27668A0B16115AFE0044E2E5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				27668A0C16115AFE0044E2E5 /* OWiOSClientTests-Info.plist */,
+				27668A0D16115AFE0044E2E5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		276689E116115AFE0044E2E5 /* OWiOSClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27668A1516115AFE0044E2E5 /* Build configuration list for PBXNativeTarget "OWiOSClient" */;
+			buildPhases = (
+				276689DE16115AFE0044E2E5 /* Sources */,
+				276689DF16115AFE0044E2E5 /* Frameworks */,
+				276689E016115AFE0044E2E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				274C5B0F16119ABE009B7DE3 /* PBXTargetDependency */,
+				274C5B0C16119A68009B7DE3 /* PBXTargetDependency */,
+			);
+			name = OWiOSClient;
+			productName = OWiOSClient;
+			productReference = 276689E216115AFE0044E2E5 /* OWiOSClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27668A0216115AFE0044E2E5 /* OWiOSClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27668A1816115AFE0044E2E5 /* Build configuration list for PBXNativeTarget "OWiOSClientTests" */;
+			buildPhases = (
+				276689FE16115AFE0044E2E5 /* Sources */,
+				276689FF16115AFE0044E2E5 /* Frameworks */,
+				27668A0016115AFE0044E2E5 /* Resources */,
+				27668A0116115AFE0044E2E5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27668A0916115AFE0044E2E5 /* PBXTargetDependency */,
+			);
+			name = OWiOSClientTests;
+			productName = OWiOSClientTests;
+			productReference = 27668A0316115AFE0044E2E5 /* OWiOSClientTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		276689D916115AFE0044E2E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OW;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Edward Williams";
+			};
+			buildConfigurationList = 276689DC16115AFE0044E2E5 /* Build configuration list for PBXProject "OWiOSClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 276689D716115AFE0044E2E5;
+			productRefGroup = 276689E316115AFE0044E2E5 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 274C5AFC16119A40009B7DE3 /* Products */;
+					ProjectRef = 274C5AFB16119A40009B7DE3 /* OpenWorld.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				276689E116115AFE0044E2E5 /* OWiOSClient */,
+				27668A0216115AFE0044E2E5 /* OWiOSClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		274C5B0616119A40009B7DE3 /* libOpenWorld.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOpenWorld.a;
+			remoteRef = 274C5B0516119A40009B7DE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		274C5B0816119A40009B7DE3 /* OpenWorldTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OpenWorldTests.octest;
+			remoteRef = 274C5B0716119A40009B7DE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		274C5B0A16119A40009B7DE3 /* OpenWorld.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OpenWorld.bundle;
+			remoteRef = 274C5B0916119A40009B7DE3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		276689E016115AFE0044E2E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276689F116115AFE0044E2E5 /* InfoPlist.strings in Resources */,
+				274C5B1016119ADE009B7DE3 /* OpenWorld.bundle in Resources */,
+				276689F916115AFE0044E2E5 /* Default.png in Resources */,
+				276689FB16115AFE0044E2E5 /* Default@2x.png in Resources */,
+				276689FD16115AFE0044E2E5 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27668A0016115AFE0044E2E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27668A0F16115AFE0044E2E5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27668A0116115AFE0044E2E5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		276689DE16115AFE0044E2E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276689F316115AFE0044E2E5 /* main.m in Sources */,
+				276689F716115AFE0044E2E5 /* OWClientAppDelegate.m in Sources */,
+				274C5B4E1612EB99009B7DE3 /* OWCustomMapViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		276689FE16115AFE0044E2E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27668A1216115AFE0044E2E5 /* OWiOSClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		274C5B0C16119A68009B7DE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenWorld;
+			targetProxy = 274C5B0B16119A68009B7DE3 /* PBXContainerItemProxy */;
+		};
+		274C5B0F16119ABE009B7DE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenWorldResources;
+			targetProxy = 274C5B0E16119ABE009B7DE3 /* PBXContainerItemProxy */;
+		};
+		27668A0916115AFE0044E2E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 276689E116115AFE0044E2E5 /* OWiOSClient */;
+			targetProxy = 27668A0816115AFE0044E2E5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		276689EF16115AFE0044E2E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				276689F016115AFE0044E2E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		27668A0D16115AFE0044E2E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27668A0E16115AFE0044E2E5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		27668A1316115AFE0044E2E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27668A1416115AFE0044E2E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27668A1616115AFE0044E2E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OWiOSClient/OWiOSClient-Prefix.pch";
+				INFOPLIST_FILE = "OWiOSClient/OWiOSClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/OWFramework-aukjnadgrpzytkgtdggmatpheijw/Build/Products/Debug-iphoneos\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		27668A1716115AFE0044E2E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OWiOSClient/OWiOSClient-Prefix.pch";
+				INFOPLIST_FILE = "OWiOSClient/OWiOSClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/OWFramework-aukjnadgrpzytkgtdggmatpheijw/Build/Products/Debug-iphoneos\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		27668A1916115AFE0044E2E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OWiOSClient.app/OWiOSClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OWiOSClient/OWiOSClient-Prefix.pch";
+				INFOPLIST_FILE = "OWiOSClientTests/OWiOSClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		27668A1A16115AFE0044E2E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OWiOSClient.app/OWiOSClient";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OWiOSClient/OWiOSClient-Prefix.pch";
+				INFOPLIST_FILE = "OWiOSClientTests/OWiOSClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		276689DC16115AFE0044E2E5 /* Build configuration list for PBXProject "OWiOSClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27668A1316115AFE0044E2E5 /* Debug */,
+				27668A1416115AFE0044E2E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27668A1516115AFE0044E2E5 /* Build configuration list for PBXNativeTarget "OWiOSClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27668A1616115AFE0044E2E5 /* Debug */,
+				27668A1716115AFE0044E2E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27668A1816115AFE0044E2E5 /* Build configuration list for PBXNativeTarget "OWiOSClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27668A1916115AFE0044E2E5 /* Debug */,
+				27668A1A16115AFE0044E2E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 276689D916115AFE0044E2E5 /* Project object */;
+}

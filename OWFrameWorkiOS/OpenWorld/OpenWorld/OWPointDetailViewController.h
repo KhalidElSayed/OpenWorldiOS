@@ -12,7 +12,7 @@
 #import "OWPayloadViewFactory.h"
 #import "OWAddPayloadViewController.h"
 #import "OWAnnotation.h"
-
+#import "OWPointDetailViewControllerDelegate.h"
 @interface OWPointDetailViewController : UIViewController <OWConnectionDelegate>{
     
     OWPayloadConnection *payloadConnection;
@@ -36,6 +36,8 @@
     NSString *currentPayloadString;
     
     IBOutlet UIActivityIndicatorView *activityView;
+    
+    id <OWPointDetailViewControllerDelegate> delegate;
 }
 
 @property (nonatomic, retain) OWPayloadConnection *payloadConnection;
@@ -46,6 +48,7 @@
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityView;
 @property (nonatomic, retain) IBOutlet UILabel *creatorLabel;
 @property (nonatomic, retain) IBOutlet UIButton *flagButton;
+@property (nonatomic, retain) id <OWPointDetailViewControllerDelegate> delegate;
 
 - (BOOL) getPayload: (NSString *) pointKey: (NSString *) dataTypeKey: (int) payloadIndex;
 

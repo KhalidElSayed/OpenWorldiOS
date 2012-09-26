@@ -7,13 +7,13 @@
 //
 
 #import "OWPointDetailViewController.h"
-#import "OWAppDelegate.h"
+#import "OWManager.h"
 @interface OWPointDetailViewController ()
 
 @end
 
 @implementation OWPointDetailViewController
-@synthesize activityView,currentAnnotation,payloadConnection,payloadView,dismissButton,addPayloadViewController,creatorLabel,flagButton;
+@synthesize delegate, activityView,currentAnnotation,payloadConnection,payloadView,dismissButton,addPayloadViewController,creatorLabel,flagButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,13 +47,13 @@
 }
  */
 - (IBAction) addPayload{
+ 
     if (addPayloadViewController == nil) {
-        [self setAddPayloadViewController:[[OWAddPayloadViewController alloc] initWithNibName:@"OWAddPayloadViewController" bundle:nil]];
+        [self setAddPayloadViewController:[[OWAddPayloadViewController alloc] initWithNibName:@"OWAddPayloadViewController" bundle:[OWManager frameworkBundle]]];
     }
-    OWAppDelegate *mainDelegate = (OWAppDelegate *) [[UIApplication sharedApplication] delegate];
-    [self presentModalViewController:addPayloadViewController animated:YES];
+    [self presentViewController:addPayloadViewController animated:YES completion:nil];
     [addPayloadViewController setPointKey:currentAnnotation.key];
-    [addPayloadViewController setCreatorKey:[[mainDelegate currentUser] userKey]];
+    [addPayloadViewController setCreatorKey:[delegate getCurrentUserKeyString]];
 }
 - (void)viewDidLoad
 {
