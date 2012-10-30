@@ -18,7 +18,7 @@
 }
 - (void) changeCurrentDataType: (OWDataType *) type{
     [pointsConnection setDataType:type];
-    [pointsConnection startConnection:[[mapViewController mapView] region]];
+    [pointsConnection startConnection:[[mapViewController owMapView] region]];
 }
 
 - (NSString *) getCurrentDataTypeKeyString{
@@ -46,7 +46,7 @@
     
 }
 - (MKCoordinateRegion) getUserRegion{
-    return [[mapViewController mapView] region];
+    return [[mapViewController owMapView] region];
    // return [[(OWMapViewController *) [[tabBarController viewControllers] objectAtIndex:0] mapView] region];
    // return MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.77, -122.4), MKCoordinateSpanMake(.10, .10));
    // return MKCoordinateRegionMake(CLLocationCoordinate2DMake(0, 0), MKCoordinateSpanMake(0, 0));

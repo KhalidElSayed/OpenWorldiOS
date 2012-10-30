@@ -17,7 +17,7 @@
 @end
 
 @implementation OWMapViewController
-@synthesize addPointViewController,mapView,detailViewController;
+@synthesize addPointViewController,owMapView,detailViewController;
 @synthesize userLoginViewController,dataTypeSelectViewController,delegate;
 - (void) loginUser{
  
@@ -52,7 +52,7 @@
     if (addPointViewController == nil) {
         [self setAddPointViewController:[[OWAddPointViewController alloc] initWithNibName:@"OWAddPointViewController" bundle:[OWManager frameworkBundle]]];
     }
-    [addPointViewController setUserLocation:[[mapView userLocation] location]];
+    [addPointViewController setUserLocation:[[owMapView userLocation] location]];
     [addPointViewController setDataKeyString:[delegate getCurrentDataTypeKeyString]];
     [addPointViewController setCreatorString:[delegate getCurrentUserKeyString]];
     [self presentViewController:addPointViewController animated:YES completion:nil];
@@ -74,7 +74,7 @@
  
     [self setDetailViewController:[[OWPointDetailViewController alloc] initWithNibName:@"DataDetailView" bundle:[OWManager frameworkBundle]]];
     [detailViewController setDelegate:self];
-    [mapView setShowsUserLocation:YES];
+    [owMapView setShowsUserLocation:YES];
 	// Do any additional setup after loading the view.
 }
 
@@ -136,48 +136,18 @@
 		
 		static NSString *annotationViewID = @"AnnotationViewID";
 		
-        //	NSLog(@"getting view for annotation: %@",[annotation title]);
-		
+ 		
 		MKPinAnnotationView *mkav = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:annotationViewID];
 		
 		if (mkav == nil) {
 			MKPinAnnotationView *m   = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationViewID];
-		//	MyPinAnnotationView  *m = [ [[MyPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationViewID] autorelease];
-			
-			//[m setPinColor:MKPinAnnotationColorPurple];
-			
-            //	[m setAnimatesDrop:YES];
+
 			
 			mkav = m;
 			
 		}
-		
-		
-		
-		OWAnnotation *myannotation = (OWAnnotation *) annotation;
-		
-		
-		switch (myannotation.category) {
-			case 0:
-				[mkav setPinColor:MKPinAnnotationColorRed];
-				break;
-			case 1:
-				[mkav setPinColor:MKPinAnnotationColorPurple];
-				break;
-			case 2:
-				[mkav setPinColor:MKPinAnnotationColorGreen];
-				break;
-			default:
-				[mkav setPinColor:MKPinAnnotationColorRed];
-				break;
-		}
-		
-		
-	//	[mkav setDescription:[myannotation description]];
-		
-		[mkav setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeDetailDisclosure]];
-		//mkav.rightCalloutAccessoryView = [ UIButtonbuttonWithType: UIButtonTypeDetailDisclosure];
-		[mkav setCanShowCallout:YES];
+ 		[mkav setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeDetailDisclosure]];
+ 		[mkav setCanShowCallout:YES];
 		
 		
 		
@@ -188,9 +158,9 @@
 }
 
 - (void) updateMapView: (NSArray *) array{
-    NSMutableArray *oldAnnotations = [NSMutableArray  arrayWithArray:mapView.annotations];
-	[oldAnnotations removeObject:[mapView userLocation]];
-    [mapView removeAnnotations:oldAnnotations];
+    NSMutableArray *oldAnnotations = [NSMutableArray  arrayWithArray:owMapView.annotations];
+	[oldAnnotations removeObject:[owMapView userLocation]];
+    [owMapView removeAnnotations:oldAnnotations];
 
     for (int i = 0; i < [array count]; i++){
         NSDictionary *pointDictionary = [array objectAtIndex:i];
@@ -213,7 +183,7 @@
             OWAnnotation    *annotation  = [[OWAnnotation alloc] initWithCoordinate:tmpPoint :title :description : created:date];
             [annotation setDataTypeKey:datatypestring];
             [annotation setKey:keystring];
-            [[self mapView] addAnnotation:annotation];
+            [[self owMapView] addAnnotation:annotation];
 
             
         }

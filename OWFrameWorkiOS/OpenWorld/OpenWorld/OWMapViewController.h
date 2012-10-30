@@ -17,7 +17,7 @@
 #import "OWUserLoginViewControllerDelegate.h"
 @class OWAddPointViewController, OWPointDetailViewController;
 @interface OWMapViewController : UIViewController <MKMapViewDelegate, OWDataTypeSelectViewControllerDelegate, OWPointDetailViewControllerDelegate,OWUserLoginViewControllerDelegate>{
-    MKMapView *mapView;
+    MKMapView *owMapView;
     OWPointDetailViewController *detailViewController;
     OWAddPointViewController *addPointViewController;
     OWDataTypeSelectViewController *dataTypeSelectViewController;
@@ -26,7 +26,7 @@
 
 
 }
-@property (nonatomic,retain) IBOutlet MKMapView *mapView;
+@property (nonatomic,retain) IBOutlet MKMapView *owMapView;
 @property (nonatomic, retain) OWPointDetailViewController *detailViewController;
 @property (nonatomic, retain) OWAddPointViewController *addPointViewController;
 @property (nonatomic, retain) OWDataTypeSelectViewController *dataTypeSelectViewController;
